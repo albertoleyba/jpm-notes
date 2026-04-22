@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- saved from url=(0062)file:///C:/Users/alber/Downloads/JPM_Notes_Assistant_v3_4.html -->
+<!-- saved from url=(0062)file:///C:/Users/alber/Downloads/JPM_Notes_Assistant_v3_6.html -->
 <html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -83,6 +83,15 @@ hr.div{border:none;border-top:1px solid var(--border);margin:1rem 0}
 .hidden{display:none!important}
 .tip{background:#EEF4FE;border:1px solid #93C5FD;border-radius:8px;padding:.65rem 1rem;font-size:11.5px;color:#1E4480;margin-bottom:.875rem;font-family:var(--mono)}
 @media(max-width:600px){.r2,.r3{grid-template-columns:1fr}#app{padding:1.1rem 1rem 2rem;border-radius:12px}}
+
+.modal-overlay{position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.5);display:flex;align-items:center;justify-content:center;z-index:1000}
+.modal-box{background:var(--bg);border-radius:12px;padding:1.75rem;max-width:440px;width:90%;box-shadow:0 8px 40px rgba(0,0,0,.18)}
+.modal-title{font-family:var(--serif);font-size:16px;font-weight:700;margin-bottom:.5rem}
+.modal-sub{font-size:12.5px;color:var(--muted);line-height:1.6;margin-bottom:1rem}
+.modal-inp{width:100%;padding:9px 12px;border:1px solid var(--border2);border-radius:7px;font-family:var(--mono);font-size:12px;background:var(--bg2);color:var(--text);outline:none;margin-bottom:.75rem}
+.modal-inp:focus{border-color:var(--navy)}
+.modal-err{font-size:11.5px;color:#c00;margin-bottom:.75rem;display:none}
+.modal-btns{display:flex;gap:8px;justify-content:flex-end}
 </style>
 </head>
 <body>
@@ -204,6 +213,20 @@ hr.div{border:none;border-top:1px solid var(--border);margin:1rem 0}
       <button class="btn btn-primary" onclick="reset()">New Note</button>
     </div>
   </div>
+
+<!-- API Key Modal -->
+<div class="modal-overlay hidden" id="key-modal">
+  <div class="modal-box">
+    <div class="modal-title">Enter your Anthropic API Key</div>
+    <div class="modal-sub">Your key is stored only in this browser and never shared. Get one at <strong>console.anthropic.com</strong> → API Keys.</div>
+    <input class="modal-inp" type="password" id="modal-key-inp" placeholder="sk-ant-api03-...">
+    <div class="modal-err" id="modal-err">Please enter a valid API key (starts with sk-ant-)</div>
+    <div class="modal-btns">
+      <button class="btn btn-secondary" onclick="closeKeyModal()">Cancel</button>
+      <button class="btn btn-primary" onclick="submitKeyModal()">Save &amp; Generate</button>
+    </div>
+  </div>
+</div>
 </div>
 
 <script>
@@ -428,16 +451,46 @@ function escHtml(str){
   return str.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
 }
 
+// API key stored securely in browser localStorage
+function getKey(){return localStorage.getItem('jpm_anthropic_key')||'';}
+function saveKey(k){localStorage.setItem('jpm_anthropic_key',k);}
+
 async function generate(){
   migrateToSB();
-  // Check for API key
-  let key=getKey();
+  // Check for API key — use modal if missing
+  const key=getKey();
   if(!key){
-    const entered=prompt('Enter your Anthropic API key (sk-ant-...):\n\nThis is stored only in your browser and never shared.');
-    if(!entered||!entered.trim()){return;}
-    saveKey(entered.trim());
-    key=entered.trim();
+    openKeyModal();
+    return;
   }
+  runGenerate();}
+
+function openKeyModal(){
+  document.getElementById('key-modal').classList.remove('hidden');
+  setTimeout(()=>document.getElementById('modal-key-inp').focus(),100);
+}
+
+function closeKeyModal(){
+  document.getElementById('key-modal').classList.add('hidden');
+  document.getElementById('modal-key-inp').value='';
+  document.getElementById('modal-err').style.display='none';
+}
+
+function submitKeyModal(){
+  const val=document.getElementById('modal-key-inp').value.trim();
+  if(!val.startsWith('sk-ant')){
+    document.getElementById('modal-err').style.display='block';
+    return;
+  }
+  saveKey(val);
+  closeKeyModal();
+  runGenerate();
+}
+
+async function runGenerate(){
+  migrateToSB();
+  const key=getKey();
+  if(!key){openKeyModal();return;}
   const btn=document.getElementById('gen-btn'),sp=document.getElementById('gen-spin');
   btn.disabled=true;sp.classList.remove('hidden');
   const pb=document.getElementById('pbar');
