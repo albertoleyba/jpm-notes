@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- saved from url=(0043)file:///C:/Users/alber/Downloads/index.html -->
+<!-- saved from url=(0045)file:///C:/Users/alber/Downloads/index_4.html -->
 <html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,14 +7,23 @@
 <style>
 @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=IBM+Plex+Sans:wght@300;400;500;600&display=swap');
 *{box-sizing:border-box;margin:0;padding:0}
-:root{--navy:#002D62;--gold:#C89B2A;--gold2:#F5E6B8;--gold3:#8A6B1A;--bg:#fff;--bg2:#f8f8f6;--border:#e2e2dc;--border2:#c0c0b8;--text:#1a1a1a;--muted:#6b6b6b;--hint:#a8a8a8;--green:#166534;--green-bg:#f0faf4;--sans:'IBM Plex Sans',sans-serif;--serif:'Libre Baskerville',serif;--mono:'IBM Plex Mono',monospace;--r:10px}
+:root{
+  --navy:#002D62;--gold:#C89B2A;--gold2:#F5E6B8;--gold3:#8A6B1A;
+  --bg:#fff;--bg2:#f8f8f6;--border:#e2e2dc;--border2:#c0c0b8;
+  --text:#1a1a1a;--muted:#6b6b6b;--hint:#a8a8a8;
+  --green:#166534;--green-bg:#f0faf4;
+  --sans:'IBM Plex Sans',sans-serif;--serif:'Libre Baskerville',serif;--mono:'IBM Plex Mono',monospace;
+  --r:10px;
+}
 body{font-family:var(--sans);background:#eeeee8;color:var(--text);min-height:100vh;padding:1.5rem 1rem 4rem}
-#app{max-width:880px;margin:0 auto;background:var(--bg);border:1px solid var(--border);border-radius:16px;padding:1.75rem 1.75rem 2.5rem;box-shadow:0 4px 32px rgba(0,0,0,.08)}
+#app{max-width:900px;margin:0 auto;background:var(--bg);border:1px solid var(--border);border-radius:16px;padding:1.75rem 1.75rem 2.5rem;box-shadow:0 4px 32px rgba(0,0,0,.08)}
+
 .hdr{display:flex;align-items:center;gap:13px;padding-bottom:1.1rem;border-bottom:1px solid var(--border);margin-bottom:1.75rem}
 .hdr-logo{width:42px;height:42px;background:var(--navy);border-radius:9px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
 .hdr-logo svg{width:22px;height:22px}
 .hdr-t{font-family:var(--serif);font-size:16px;font-weight:700;letter-spacing:-.01em}
 .hdr-s{font-family:var(--mono);font-size:10.5px;color:var(--muted);margin-top:2px}
+
 .snav{display:grid;grid-template-columns:28px 1fr 28px 1fr 28px 1fr 28px;align-items:center;margin-bottom:1.75rem}
 .scol{display:flex;flex-direction:column;align-items:center}
 .sdot{width:28px;height:28px;border-radius:50%;border:1px solid var(--border);background:var(--bg2);color:var(--muted);font-family:var(--mono);font-size:10px;font-weight:600;display:flex;align-items:center;justify-content:center;transition:all .2s;flex-shrink:0}
@@ -22,14 +31,18 @@ body{font-family:var(--sans);background:#eeeee8;color:var(--text);min-height:100
 .sdot.done{background:var(--gold);color:#fff;border-color:var(--gold3)}
 .sline{flex:1;height:1px;background:var(--border)}
 .slbl{font-size:9.5px;font-family:var(--mono);color:var(--hint);text-align:center;margin-top:3px}
+
 .card{background:var(--bg);border:1px solid var(--border);border-radius:var(--r);padding:1.25rem;margin-bottom:.875rem}
 .ctitle{font-family:var(--mono);font-size:9.5px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:.875rem}
+
+/* CHIPS — now multi-select */
 .chips{display:flex;flex-wrap:wrap;gap:7px}
 .chip{display:flex;align-items:center;gap:7px;padding:8px 13px;border:1px solid var(--border);border-radius:8px;cursor:pointer;font-size:12.5px;background:var(--bg2);color:var(--text);transition:all .15s;user-select:none}
 .chip:hover{border-color:var(--border2)}
 .chip.on{background:var(--navy);color:#fff;border-color:var(--navy)}
 .chip .ci{width:18px;height:18px;border-radius:4px;background:rgba(255,255,255,.2);display:flex;align-items:center;justify-content:center;font-size:9px;font-weight:700;flex-shrink:0}
 .chip:not(.on) .ci{background:var(--border)}
+
 .fg{margin-bottom:.875rem}
 .fl{display:block;font-size:11.5px;font-weight:500;color:var(--muted);margin-bottom:4px}
 .req{color:#c00;margin-left:2px}
@@ -38,15 +51,18 @@ input:focus,select:focus,textarea:focus{border-color:var(--navy);box-shadow:0 0 
 textarea{resize:vertical;min-height:70px;line-height:1.6}
 .r2{display:grid;grid-template-columns:1fr 1fr;gap:11px}
 .r3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:11px}
+
 .rpills{display:flex;flex-wrap:wrap;gap:6px}
-.rpill{padding:6px 13px;border:1px solid var(--border);border-radius:20px;font-size:12px;cursor:pointer;background:var(--bg2);color:var(--text);transition:all .15s}
+.rpill{padding:6px 13px;border:1px solid var(--border);border-radius:20px;font-size:12px;cursor:pointer;background:var(--bg2);color:var(--text);transition:all .15s;user-select:none}
 .rpill.on{background:var(--navy);color:#fff;border-color:var(--navy)}
+
 .btn{display:inline-flex;align-items:center;gap:7px;padding:9px 18px;border-radius:8px;font-family:var(--sans);font-size:13px;font-weight:500;cursor:pointer;border:none;transition:all .15s}
 .btn-primary{background:var(--navy);color:#fff}.btn-primary:hover{opacity:.88}
 .btn-secondary{background:var(--bg2);color:var(--text);border:1px solid var(--border)}.btn-secondary:hover{border-color:var(--border2)}
 .btn-gold{background:var(--gold);color:#fff}.btn-gold:hover{opacity:.88}
 .btn[disabled]{opacity:.4;cursor:not-allowed}
 .btn-row{display:flex;gap:9px;margin-top:1.1rem;flex-wrap:wrap}
+
 .cb-item{display:flex;align-items:flex-start;gap:10px;padding:9px 11px;border-radius:7px;border:1px solid transparent;margin-bottom:2px;cursor:pointer;user-select:none}
 .cb-item:hover{background:var(--bg2);border-color:var(--border)}
 .cb-item.on{background:var(--green-bg);border-color:#86efac}
@@ -58,20 +74,19 @@ textarea{resize:vertical;min-height:70px;line-height:1.6}
 .cb-inp.show{display:block}
 .cb-inp input,.cb-inp select,.cb-inp textarea{font-size:12.5px;padding:6px 10px;background:var(--bg);border-color:var(--border2)}
 .cb-inp textarea{min-height:56px}
+
 .sec-head{font-family:var(--mono);font-size:9px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--hint);margin:1.1rem 0 .4rem;padding-bottom:.35rem;border-bottom:1px solid var(--border)}
 .sec-head:first-child{margin-top:0}
+
 .note-wrap{background:var(--bg2);border:1px solid var(--border);border-radius:8px;padding:1.25rem;font-family:var(--mono);font-size:12px;line-height:1.9;color:var(--text);max-height:560px;overflow-y:auto}
-.data-block{display:table;width:100%;margin-top:1rem;font-family:var(--mono);font-size:12px;line-height:1.9}
-.data-row{display:table-row}
-.data-label{display:table-cell;color:var(--muted);padding-right:1rem;white-space:nowrap;width:1%}
-.data-value{display:table-cell;text-align:right;width:99%}
 .out-hdr{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:.875rem;flex-wrap:wrap;gap:8px}
 .out-title{font-family:var(--serif);font-size:16px;font-weight:700}
 .tags{display:flex;gap:6px;flex-wrap:wrap;margin-top:5px}
 .tag{padding:2px 9px;border-radius:20px;font-size:11px;font-family:var(--mono);background:var(--bg2);color:var(--muted);border:1px solid var(--border)}
 .tag.hi{background:var(--navy);color:#fff;border-color:var(--navy)}
-.cpbtn{padding:5px 13px;border-radius:6px;font-size:12px;cursor:pointer;border:1px solid var(--border);background:var(--bg2);color:var(--text);font-family:var(--sans);transition:all .15s}
-.cpbtn:hover{border-color:var(--gold);color:var(--gold3)}
+.cpbtn{padding:8px 18px;border-radius:8px;font-size:13px;font-weight:500;cursor:pointer;border:none;background:var(--gold);color:#fff;font-family:var(--sans);transition:all .15s}
+.cpbtn:hover{opacity:.88}
+.cpbtn.copied{background:var(--green)}
 .prog{height:2px;background:var(--gold2);border-radius:2px;overflow:hidden;margin:.75rem 0}
 .prog-i{height:100%;width:0%;background:var(--gold);transition:width .35s ease}
 .disc{font-size:10.5px;color:var(--hint);line-height:1.65;margin-top:9px;font-family:var(--mono)}
@@ -82,7 +97,7 @@ hr.div{border:none;border-top:1px solid var(--border);margin:1rem 0}
 @keyframes fi{from{opacity:0;transform:translateY(5px)}to{opacity:1;transform:translateY(0)}}
 .hidden{display:none!important}
 .tip{background:#EEF4FE;border:1px solid #93C5FD;border-radius:8px;padding:.65rem 1rem;font-size:11.5px;color:#1E4480;margin-bottom:.875rem;font-family:var(--mono)}
-@media(max-width:600px){.r2,.r3{grid-template-columns:1fr}#app{padding:1.1rem 1rem 2rem;border-radius:12px}}
+.acct-note{font-size:11px;color:var(--muted);margin-top:6px;font-family:var(--mono)}
 
 .modal-overlay{position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.5);display:flex;align-items:center;justify-content:center;z-index:1000}
 .modal-box{background:var(--bg);border-radius:12px;padding:1.75rem;max-width:440px;width:90%;box-shadow:0 8px 40px rgba(0,0,0,.18)}
@@ -92,65 +107,107 @@ hr.div{border:none;border-top:1px solid var(--border);margin:1rem 0}
 .modal-inp:focus{border-color:var(--navy)}
 .modal-err{font-size:11.5px;color:#c00;margin-bottom:.75rem;display:none}
 .modal-btns{display:flex;gap:8px;justify-content:flex-end}
+
+@media(max-width:600px){.r2,.r3{grid-template-columns:1fr}#app{padding:1.1rem 1rem 2rem;border-radius:12px}}
 </style>
 </head>
 <body>
 <div id="app">
-  <div class="hdr">
-    <div class="hdr-logo">
-      <svg viewBox="0 0 24 24" fill="none">
-        <rect x="3" y="3" width="8" height="8" rx="1.5" fill="#C89B2A"></rect>
-        <rect x="13" y="3" width="8" height="8" rx="1.5" fill="rgba(255,255,255,.35)"></rect>
-        <rect x="3" y="13" width="8" height="8" rx="1.5" fill="rgba(255,255,255,.35)"></rect>
-        <rect x="13" y="13" width="8" height="8" rx="1.5" fill="rgba(255,255,255,.35)"></rect>
-      </svg>
-    </div>
-    <div>
-      <div class="hdr-t">Notes Assistant — J.P. Morgan Securities LLC</div>
-      <div class="hdr-s">Alberto Leyba · Wealth Management · LIM Suite Ready</div>
-    </div>
-  </div>
 
-  <div class="snav">
-    <div class="scol"><div class="sdot active" id="d0">1</div><div class="slbl">Type</div></div>
-    <div class="sline"></div>
-    <div class="scol"><div class="sdot" id="d1">2</div><div class="slbl">Client</div></div>
-    <div class="sline"></div>
-    <div class="scol"><div class="sdot" id="d2">3</div><div class="slbl">Details</div></div>
-    <div class="sline"></div>
-    <div class="scol"><div class="sdot" id="d3">4</div><div class="slbl">Note</div></div>
+<div class="hdr">
+  <div class="hdr-logo">
+    <svg viewBox="0 0 24 24" fill="none">
+      <rect x="3" y="3" width="8" height="8" rx="1.5" fill="#C89B2A"></rect>
+      <rect x="13" y="3" width="8" height="8" rx="1.5" fill="rgba(255,255,255,.35)"></rect>
+      <rect x="3" y="13" width="8" height="8" rx="1.5" fill="rgba(255,255,255,.35)"></rect>
+      <rect x="13" y="13" width="8" height="8" rx="1.5" fill="rgba(255,255,255,.35)"></rect>
+    </svg>
   </div>
+  <div>
+    <div class="hdr-t">Notes Assistant — J.P. Morgan Securities LLC</div>
+    <div class="hdr-s">Alberto Leyba · Wealth Management</div>
+  </div>
+</div>
 
-  <div id="p0" class="pane">
-    <div class="card">
-      <div class="ctitle">Account Type</div>
-      <div class="chips" id="acct-chips">
-        <div class="chip" data-v="brokerage"><span class="ci">B</span>Brokerage</div>
-        <div class="chip" data-v="ira"><span class="ci">R</span>IRA / Roth</div>
-        <div class="chip" data-v="trust"><span class="ci">T</span>Trust</div>
-        <div class="chip" data-v="business"><span class="ci">E</span>Business / Entity</div>
-        <div class="chip" data-v="annuity"><span class="ci">A</span>Annuity</div>
-        <div class="chip" data-v="managed"><span class="ci">M</span>Managed Strategy</div>
+<div class="snav">
+  <div class="scol"><div class="sdot active" id="d0">1</div><div class="slbl">Type</div></div>
+  <div class="sline"></div>
+  <div class="scol"><div class="sdot" id="d1">2</div><div class="slbl">Client</div></div>
+  <div class="sline"></div>
+  <div class="scol"><div class="sdot" id="d2">3</div><div class="slbl">Details</div></div>
+  <div class="sline"></div>
+  <div class="scol"><div class="sdot" id="d3">4</div><div class="slbl">Note</div></div>
+</div>
+
+<!-- PANE 0: Account + Note Type -->
+<div id="p0" class="pane">
+  <div class="card">
+    <div class="ctitle">Account Type <span style="font-size:10px;color:var(--muted);font-weight:400">(select all that apply)</span></div>
+    <div class="chips" id="acct-chips">
+      <div class="chip" data-v="brokerage"><span class="ci">B</span>Brokerage</div>
+      <div class="chip" data-v="ira"><span class="ci">R</span>IRA / Roth</div>
+      <div class="chip" data-v="trust"><span class="ci">T</span>Trust</div>
+      <div class="chip" data-v="business"><span class="ci">E</span>Business / Entity</div>
+      <div class="chip" data-v="annuity"><span class="ci">A</span>Annuity</div>
+      <div class="chip" data-v="managed"><span class="ci">M</span>Managed Strategy</div>
+    </div>
+    <div class="acct-note" id="acct-note" style="display:none"></div>
+  </div>
+  <div class="card" id="nt-card" style="opacity:.4;pointer-events:none">
+    <div class="ctitle">Note Type</div>
+    <div class="chips" id="nt-chips"></div>
+  </div>
+  <div class="btn-row">
+    <button class="btn btn-primary" id="btn0" disabled="" onclick="go(1)">Continue →</button>
+  </div>
+</div>
+
+<!-- PANE 1: Client Info -->
+<div id="p1" class="pane hidden">
+  <div class="card">
+    <div class="ctitle">Client &amp; Meeting Info</div>
+    <div class="r2">
+      <div class="fg"><label class="fl">Client Name <span class="req">*</span></label><input type="text" id="f-name" placeholder="Last, First M."></div>
+      <div class="fg">
+        <label class="fl">Account Number
+          <span style="margin-left:8px;font-size:11px;font-weight:400;color:var(--muted)">
+            <input type="checkbox" id="f-acct-pending" style="width:12px;height:12px;accent-color:var(--navy);margin-right:3px" onchange="toggleAcctNum()"> Pending / Not yet assigned
+          </span>
+        </label>
+        <input type="text" id="f-acct" placeholder="e.g. 123-456789">
       </div>
+      <div class="fg"><label class="fl">Date of Contact</label><input type="date" id="f-date"></div>
+      <div class="fg"><label class="fl">Advisor</label><input type="text" id="f-adv" value="Alberto Leyba"></div>
     </div>
-    <div class="card" id="nt-card" style="opacity:.4;pointer-events:none">
-      <div class="ctitle">Note Type</div>
-      <div class="chips" id="nt-chips"></div>
+    <div class="r2">
+      <div class="fg">
+        <label class="fl">Referral Source</label>
+        <select id="f-ref" onchange="toggleRefOther()">
+          <option value="">-- Select --</option>
+          <option>Manuel Calas</option>
+          <option>Chui Chui Rua</option>
+          <option>Juan Luna</option>
+          <option>Ernesto Silva</option>
+          <option>Other</option>
+        </select>
+        <input type="text" id="f-ref-other" placeholder="Enter referral source" style="margin-top:6px;display:none">
+      </div>
+      <div class="fg"><label class="fl">Client Annual Income</label><input type="text" id="f-income" placeholder="e.g. 395k" oninput="autoFillIncome()"></div>
     </div>
-    <div class="btn-row"><button class="btn btn-primary" id="btn0" disabled="" onclick="go(1)">Continue →</button></div>
-  </div>
-
-  <div id="p1" class="pane hidden">
-    <div class="card">
-      <div class="ctitle">Client &amp; Meeting Info</div>
-      <div class="r2">
-        <div class="fg"><label class="fl">Client Name <span class="req">*</span></label><input type="text" id="f-name" placeholder="Last, First M."></div>
-        <div class="fg"><label class="fl">Account Number</label><input type="text" id="f-acct" placeholder="e.g. 123-456789"></div>
-        <div class="fg"><label class="fl">Date of Contact</label><input type="date" id="f-date"></div>
-        <div class="fg"><label class="fl">Advisor</label><input type="text" id="f-adv" value="Alberto Leyba"></div>
-        <div class="fg"><label class="fl">Referral Source</label><input type="text" id="f-ref" placeholder="e.g. Banker Maria Lopez at Chase Branch on Brickell Ave"></div>
-        <div class="fg"><label class="fl">Client Annual Income</label><input type="text" id="f-income" placeholder="e.g. 395k" oninput="autoFillIncome()"></div>
-        <div class="fg"><label class="fl">Meeting Location</label><input type="text" id="f-location" placeholder="e.g. our Brickell office, Chase branch on 107th Ave"></div>
+    <div class="r2">
+      <div class="fg">
+        <label class="fl">Meeting Location</label>
+        <select id="f-location">
+          <option value="">-- Select --</option>
+          <option>West Brickell</option>
+          <option>Key Biscayne</option>
+          <option>Coconut Grove</option>
+          <option>Coral Gables</option>
+          <option>Flagler and 37th</option>
+          <option>Wellington</option>
+          <option>Lake Worth Main</option>
+          <option>Zoom / Virtual</option>
+        </select>
       </div>
       <div class="fg"><label class="fl">How did you meet?</label>
         <div class="rpills" id="meet-pills">
@@ -160,59 +217,81 @@ hr.div{border:none;border-top:1px solid var(--border);margin:1rem 0}
           <div class="rpill" data-v="video call">Video Call</div>
         </div>
       </div>
-      <div id="extra-fields"></div>
     </div>
-    <div class="btn-row">
-      <button class="btn btn-secondary" onclick="go(0)">← Back</button>
-      <button class="btn btn-primary" onclick="go(2)">Continue →</button>
-    </div>
+    <div id="extra-fields"></div>
   </div>
+  <div class="btn-row">
+    <button class="btn btn-secondary" onclick="go(0)">← Back</button>
+    <button class="btn btn-primary" onclick="go(2)">Continue →</button>
+  </div>
+</div>
 
-  <div id="p2" class="pane hidden">
-    <div class="card">
-      <div class="ctitle" id="p2-title">Note Details</div>
-      <div id="cb-fields"></div>
-    </div>
-    <div class="card">
-      <div class="ctitle">Structured Data Block</div>
-      <div class="tip">💡 Income auto-filled from Step 1. All fields editable.</div>
-      <div class="r3">
-        <div class="fg"><label class="fl">Liabilities</label><input type="text" id="sb-liab" placeholder="0.00"></div>
-        <div class="fg"><label class="fl">Time Horizon</label><select id="sb-th"><option>1-3 years</option><option>3-5 years</option><option>5-10 years</option><option>10+ years</option><option>Less than 1 year</option></select></div>
-        <div class="fg"><label class="fl">Objectives</label><select id="sb-obj"><option>Income</option><option>Moderate</option><option>Growth</option><option>Growth &amp; Income</option><option>Capital Preservation</option><option>Aggressive Growth</option></select></div>
-        <div class="fg"><label class="fl">Risk Tolerance</label><select id="sb-risk"><option>Conservative</option><option>Moderate Conservative</option><option>Moderate</option><option>Moderate Aggressive</option><option>Aggressive</option></select></div>
-        <div class="fg"><label class="fl">Income</label><input type="text" id="sb-inc" placeholder="e.g. 75k"></div>
-        <div class="fg"><label class="fl">Emergency Fund</label><select id="sb-ef"><option>Covered</option><option>Partially covered</option><option>Not covered</option></select></div>
+<!-- PANE 2: Checkbox Details -->
+<div id="p2" class="pane hidden">
+  <div class="card">
+    <div class="ctitle" id="p2-title">Note Details</div>
+    <div id="cb-fields"></div>
+  </div>
+  <div class="card">
+    <div class="ctitle">Structured Data Block</div>
+    <p style="font-size:11px;color:var(--hint);font-family:var(--mono);margin-bottom:.75rem">Fields marked ★ auto-fill from your selections above.</p>
+    <div class="r3">
+      <div class="fg"><label class="fl">Liabilities</label><input type="text" id="sb-liab" placeholder="0.00"></div>
+      <div class="fg"><label class="fl">Time Horizon ★</label>
+        <select id="sb-th" onchange="this._m=true">
+          <option>1-3 years</option><option>3-5 years</option><option>5-10 years</option><option>10+ years</option><option>Less than 1 year</option>
+        </select>
       </div>
-      <div class="r2">
-        <div class="fg"><label class="fl">Outside Liquid Assets</label><input type="text" id="sb-ola" placeholder="e.g. 1.5MM IRA at Prudential"></div>
-        <div class="fg"><label class="fl">Primary Residence</label><input type="text" id="sb-house" placeholder="e.g. House is paid for"></div>
-        <div class="fg"><label class="fl">Advisory Fee</label><input type="text" id="sb-fee" placeholder="e.g. 1.45% LCL, Annuity Embedded"></div>
-        <div class="fg"><label class="fl">Internal Expenses</label><input type="text" id="sb-ie" placeholder="e.g. Discussed / 35bps"></div>
+      <div class="fg"><label class="fl">Objectives</label>
+        <select id="sb-obj">
+          <option>Income</option><option>Moderate</option><option>Growth</option><option>Growth &amp; Income</option><option>Capital Preservation</option><option>Aggressive Growth</option>
+        </select>
+      </div>
+      <div class="fg"><label class="fl">Risk Tolerance</label>
+        <select id="sb-risk">
+          <option>Conservative</option><option>Moderate Conservative</option><option>Moderate</option><option>Moderate Aggressive</option><option>Aggressive</option>
+        </select>
+      </div>
+      <div class="fg"><label class="fl">Income ★</label><input type="text" id="sb-inc" placeholder="e.g. 75k" oninput="this._m=true"></div>
+      <div class="fg"><label class="fl">Emergency Fund</label>
+        <select id="sb-ef"><option>Covered</option><option>Partially covered</option><option>Not covered</option></select>
       </div>
     </div>
-    <div class="btn-row">
-      <button class="btn btn-secondary" onclick="go(1)">← Back</button>
-      <button class="btn btn-gold" id="gen-btn" onclick="generate()"><span id="gen-spin" class="spin hidden"></span>Generate Note</button>
+    <div class="r2">
+      <div class="fg"><label class="fl">Outside Liquid Assets</label><input type="text" id="sb-ola" placeholder="e.g. 1.5MM IRA at Prudential" oninput="this._m=true"></div>
+      <div class="fg"><label class="fl">House ★</label><input type="text" id="sb-house" placeholder="e.g. House is paid for" oninput="this._m=true"></div>
+      <div class="fg"><label class="fl">Advisory Fee ★</label><input type="text" id="sb-fee" placeholder="e.g. 1.45% LCL, Annuity Embedded" oninput="this._m=true"></div>
+      <div class="fg"><label class="fl">Internal Expenses ★</label><input type="text" id="sb-ie" placeholder="e.g. Discussed / 35bps" oninput="this._m=true"></div>
     </div>
   </div>
+  <div class="btn-row">
+    <button class="btn btn-secondary" onclick="go(1)">← Back</button>
+    <button class="btn btn-gold" id="gen-btn" onclick="generate()">
+      <span id="gen-spin" class="spin hidden"></span>Generate Note
+    </button>
+  </div>
+</div>
 
-  <div id="p3" class="pane hidden">
-    <div class="card">
-      <div class="out-hdr">
-        <div><div class="out-title" id="out-title">Client Note</div><div class="tags" id="out-tags"></div></div>
-        <button class="cpbtn" onclick="copyNote()">Copy for LIM Suite</button>
+<!-- PANE 3: Output -->
+<div id="p3" class="pane hidden">
+  <div class="card">
+    <div class="out-hdr">
+      <div>
+        <div class="out-title" id="out-title">Client Note</div>
+        <div class="tags" id="out-tags"></div>
       </div>
-      <div class="prog"><div class="prog-i" id="pbar"></div></div>
-      <div class="note-wrap" id="note-out">Generating…</div>
-      <p class="disc">⚠ Internal record-keeping only. Retain per FINRA Rule 4511 (6-year minimum). J.P. Morgan Securities LLC, Member FINRA/SIPC.</p>
+      <button class="cpbtn" id="copy-btn" onclick="copyNote()">Copy Note</button>
     </div>
-    <div class="btn-row">
-      <button class="btn btn-secondary" onclick="go(2)">← Edit</button>
-      <button class="btn btn-secondary" onclick="dlNote()">Export .txt</button>
-      <button class="btn btn-primary" onclick="reset()">New Note</button>
-    </div>
+    <div class="prog"><div class="prog-i" id="pbar"></div></div>
+    <div class="note-wrap" id="note-out">Generating…</div>
+    <p class="disc">⚠ Internal record-keeping only. Retain per FINRA Rule 4511 (6-year minimum). J.P. Morgan Securities LLC, Member FINRA/SIPC.</p>
   </div>
+  <div class="btn-row">
+    <button class="btn btn-secondary" onclick="go(2)">← Edit</button>
+    <button class="btn btn-secondary" onclick="dlNote()">Export .txt</button>
+    <button class="btn btn-primary" onclick="reset()">New Note</button>
+  </div>
+</div>
 
 <!-- API Key Modal -->
 <div class="modal-overlay hidden" id="key-modal">
@@ -227,263 +306,495 @@ hr.div{border:none;border-top:1px solid var(--border);margin:1rem 0}
     </div>
   </div>
 </div>
+
 </div>
 
 <script>
-const NT={brokerage:[{v:'contact',l:'Client Contact / Onboarding'},{v:'trade',l:'Investment Rationale / Trade'},{v:'plan',l:'Financial Plan Review'},{v:'suitability',l:'Suitability / KYC Update'}],ira:[{v:'contact',l:'Client Contact / Onboarding'},{v:'trade',l:'Investment Rationale / Trade'},{v:'plan',l:'Financial Plan Review'},{v:'suitability',l:'Suitability / KYC Update'},{v:'distribution',l:'Distribution / RMD Note'}],trust:[{v:'contact',l:'Client Contact / Onboarding'},{v:'trade',l:'Investment Rationale / Trade'},{v:'suitability',l:'Suitability / Trust Governance'}],business:[{v:'contact',l:'Client Contact / Onboarding'},{v:'trade',l:'Investment Rationale / Trade'},{v:'suitability',l:'Suitability / Entity KYC'}],annuity:[{v:'contact',l:'Client Contact / Onboarding'},{v:'annuity_sale',l:'Annuity Sale / Exchange'},{v:'suitability',l:'Suitability Review'},{v:'plan',l:'Financial Plan Review'}],managed:[{v:'contact',l:'Client Contact / Onboarding'},{v:'managed_new',l:'New Managed Strategy Note'},{v:'plan',l:'Financial Plan Review'},{v:'trade',l:'Rebalance / Trade Note'},{v:'suitability',l:'Suitability / KYC Update'}]};
-const CB={contact:[{sec:'Client Profile'},{id:'cb-bg',label:'Client background',type:'multi',ph:'Profession, age, family, key personal details.',note:'Client background: {val}',chk:false},{id:'cb-concern',label:'Primary concern / goal',type:'multi',ph:"Client's main financial goal.",note:"Client's primary concern: {val}",chk:true},{id:'cb-noliab',label:'No major liabilities',type:'check',note:'Client reported no major liabilities.',chk:true},{id:'cb-ef',label:'Emergency fund covered',type:'check',note:'Emergency fund is covered.',chk:true},{id:'cb-homepaid',label:'Home is paid off',type:'check',note:'Client owns their home free and clear.',chk:false},{id:'cb-rent',label:'Client rents',type:'check',note:'Client currently rents.',chk:false},{id:'cb-outside',label:'Outside Investments & Assets',type:'multi',ph:'e.g. 1.5MM IRA at Prudential, 500k overseas.',note:'Outside assets: {val}.',chk:true},{sec:'Discussion'},{id:'cb-wealthplan',label:'Created a wealth plan and discussed goals',type:'check',note:'Created a wealth plan and discussed goals.',chk:true},{id:'cb-mkteduc',label:'Explained market volatility & principal risk',type:'check',note:'I took the time to explain and educate the client on how markets work, its volatility, loss of principal risk and how inflation affects their money.',chk:true},{id:'cb-mfeduc',label:'Mutual funds / ETFs discussed educationally (not implemented)',type:'check',note:'Mutual funds and ETFs were discussed in an educational context; no mutual fund recommendation was implemented.',chk:false},{id:'cb-timehorizon',label:'Time horizon discussed',type:'select',opts:['Less than 1 year','1-3 years','3-5 years','5-10 years','10+ years'],note:'Discussed time horizon, which at this point is {val}.',chk:true},{id:'cb-concepts',label:'Additional concepts explained',type:'multi',ph:'e.g. YTW, bond duration, FED rate impact.',note:'Additional concepts: {val}.',chk:false},{sec:'Products & Strategies'},{id:'cb-products',label:'Products / strategies selected',type:'multi',ph:'e.g. 150k Large Cap Leaders, 150k CWMPD, 150k Symetra Edge Revolution FIA.',note:'Investment solutions selected: {val}.',chk:true},{id:'cb-fees',label:'Advisory fee discussed',type:'text',ph:'e.g. 1.45% for LCL portfolio',note:'Discussed advisory fee of {val}.',chk:true},{id:'cb-ie',label:'Internal expenses discussed',type:'text',ph:'e.g. 35bps / embedded in strategy',note:'Internal expenses of {val} were disclosed and discussed.',chk:true},{id:'cb-norestrict',label:'No portfolio restrictions confirmed',type:'check',note:'Verified there are no portfolio restrictions.',chk:false},{sec:'Account Opening & Follow-Up'},{id:'cb-docusign',label:'Accounts opened via DocuSign',type:'check',note:'Completed account opening via DocuSign.',chk:true},{id:'cb-funding',label:'Accounts funded via money movement',type:'check',note:'Agreed with the client for the accounts to be funded via money movement once they were opened.',chk:true},{id:'cb-followup',label:'45-day follow-up appointment booked',type:'check',note:'Booked a follow-up appointment in 45 days to discuss first statement and answer any questions.',chk:true},{id:'cb-addl',label:'Additional notes',type:'multi',ph:'Any other relevant details.',note:'Additional: {val}.',chk:false}],trade:[{sec:'Trade Details'},{id:'t-security',label:'Security / Instrument',type:'text',ph:'Ticker, CUSIP, or full product name',note:'Security: {val}.',chk:true},{id:'t-action',label:'Trade action',type:'select',opts:['Buy','Sell','Exchange','Rollover','Rebalance','Liquidate','1035 Exchange'],note:'Trade action: {val}.',chk:true},{id:'t-amount',label:'Dollar amount / units',type:'text',ph:'e.g. $100,000',note:'Amount: {val}.',chk:true},{id:'t-solicited',label:'Solicited — advisor recommended',type:'check',note:'This trade was solicited — advisor recommended.',chk:true},{id:'t-unsolicited',label:'Unsolicited — client requested',type:'check',note:'This trade was unsolicited — client requested.',chk:false},{sec:'Suitability'},{id:'t-objective',label:'Investment objective',type:'select',opts:['Capital Preservation','Income','Growth & Income','Growth','Aggressive Growth','Speculation'],note:'Investment objective: {val}.',chk:true},{id:'t-risktol',label:'Risk tolerance',type:'select',opts:['Conservative','Moderate Conservative','Moderate','Moderate Aggressive','Aggressive'],note:'Risk tolerance: {val}.',chk:true},{id:'t-th',label:'Time horizon',type:'select',opts:['< 1 Year','1-3 Years','3-5 Years','5-10 Years','10+ Years'],note:'Time horizon: {val}.',chk:true},{id:'t-rationale',label:'Investment rationale',type:'multi',ph:'Why is this suitable for this client now?',note:'Investment rationale: {val}.',chk:true},{id:'t-alts',label:'Alternatives considered',type:'multi',ph:'What else was reviewed?',note:'Alternatives considered: {val}.',chk:false},{sec:'Fees & Compliance'},{id:'t-fees',label:'Fees / internal expenses disclosed',type:'text',ph:'e.g. 1.45%, internal expense ratio discussed',note:'Fees and internal expenses disclosed: {val}.',chk:true},{id:'t-regbi',label:'Reg BI best interest documented',type:'check',note:"Reg BI best interest obligation documented.",chk:true}],plan:[{sec:'Review'},{id:'pl-revtype',label:'Review type',type:'select',opts:['Initial Wealth Plan','Annual Review','Semi-Annual Review','Ad-hoc Review'],note:'Review type: {val}.',chk:true},{id:'pl-goals',label:'Financial goals reviewed',type:'multi',ph:'Retirement, income, estate, liquidity, education, inflation.',note:'Goals reviewed: {val}.',chk:true},{id:'pl-horizon',label:'Time horizon',type:'text',ph:'e.g. 15 years to retirement',note:'Time horizon: {val}.',chk:true},{id:'pl-perf',label:'Portfolio performance reviewed',type:'multi',ph:'YTD, benchmark, allocation overview.',note:'Portfolio performance: {val}.',chk:false},{id:'pl-changes',label:'Recommendations / changes to plan',type:'multi',ph:'What was adjusted or recommended?',note:'Recommendations: {val}.',chk:true},{id:'pl-next',label:'Next steps',type:'multi',ph:'Follow-up items, next meeting.',note:'Next steps: {val}.',chk:false},{sec:'Disclosures'},{id:'pl-wp',label:'Wealth plan created / updated',type:'check',note:'Created/updated the wealth plan and discussed goals.',chk:true},{id:'pl-mkt',label:'Market volatility & inflation explained',type:'check',note:'Explained market volatility, loss of principal risk, and how inflation affects purchasing power.',chk:true}],suitability:[{sec:'Reason'},{id:'su-trigger',label:'Reason for update',type:'select',opts:['Annual Review','Material Life Change','Client Request','Account Opening','Compliance Requirement'],note:'Reason for suitability update: {val}.',chk:true},{sec:'Circumstances'},{id:'su-life',label:'Material life changes',type:'multi',ph:'Employment, income, net worth, marital status, dependents, health.',note:'Material changes: {val}.',chk:false},{id:'su-fin',label:'Updated financial information',type:'multi',ph:'Income, liquid net worth, total net worth, tax bracket.',note:'Updated financial info: {val}.',chk:true},{id:'su-obj',label:'Updated investment objective',type:'select',opts:['Capital Preservation','Income','Growth & Income','Growth','Aggressive Growth','Speculation','No Change'],note:'Updated objective: {val}.',chk:true},{id:'su-risk',label:'Updated risk tolerance',type:'select',opts:['Conservative','Moderate Conservative','Moderate','Moderate Aggressive','Aggressive','No Change'],note:'Updated risk tolerance: {val}.',chk:true},{sec:'Confirmation'},{id:'su-conf',label:'Client confirmation method',type:'select',opts:['Verbal — Phone','Verbal — In-Person','Written — Signed Form','Electronic — DocuSign','Email Acknowledgment'],note:'Client confirmed via: {val}.',chk:true},{id:'su-suit',label:'Current holdings remain suitable',type:'check',note:'Based on updated profile, current holdings and investment strategy remain suitable.',chk:true}],distribution:[{sec:'Details'},{id:'di-type',label:'Distribution type',type:'select',opts:['Required Minimum Distribution (RMD)','Early Withdrawal','Normal Distribution','72(t) SEPP','Roth Conversion','Rollover / Transfer Out'],note:'Distribution type: {val}.',chk:true},{id:'di-amt',label:'Distribution amount',type:'text',ph:'Dollar amount',note:'Distribution amount: {val}.',chk:true},{sec:'Tax Withholding'},{id:'di-fed',label:'Federal withholding election',type:'select',opts:['10% — Default','Greater than 10%','Waived — Client Elected No Withholding'],note:'Federal withholding: {val}.',chk:true},{id:'di-state',label:'State withholding election',type:'select',opts:['Per state default','Greater than default','Waived by client','N/A — No state income tax'],note:'State withholding: {val}.',chk:true},{sec:'Disclosures'},{id:'di-tax',label:'Tax consequences disclosed',type:'multi',ph:'Ordinary income, 10% penalty if applicable, Roth ordering rules.',note:'Tax consequences: {val}.',chk:true},{id:'di-rmd',label:'RMD calculation basis',type:'text',ph:'Prior year-end balance, life expectancy factor.',note:'RMD basis: {val}.',chk:false},{id:'di-pen',label:'10% early withdrawal penalty discussed',type:'check',note:'10% early withdrawal penalty (if under 59½) disclosed.',chk:false}],annuity_sale:[{sec:'Product'},{id:'an-carrier',label:'Carrier & product name',type:'text',ph:'e.g. Pacific Life Mariner 3-Year GROP',note:'Product: {val}.',chk:true},{id:'an-type',label:'Annuity type',type:'select',opts:['Fixed Annuity','Fixed Indexed Annuity (FIA)','Variable Annuity','RILA','Immediate Annuity','Deferred Income Annuity'],note:'Annuity type: {val}.',chk:true},{id:'an-prem',label:'Premium / funding amount',type:'text',ph:'e.g. $100,000',note:'Premium: {val}.',chk:true},{id:'an-rate',label:'Credited rate / cap / buffer',type:'text',ph:'e.g. 4.55% fixed',note:'Credited rate/cap: {val}.',chk:true},{id:'an-ann',label:'Annuitant & beneficiary',type:'text',ph:'e.g. Client is annuitant; spouse is beneficiary',note:'Account structure: {val}.',chk:true},{sec:'Terms & Fees'},{id:'an-surr',label:'Surrender charge schedule disclosed',type:'text',ph:'e.g. 7% declining over 7 years',note:'Surrender charge: {val}. Client understands limited access to principal.',chk:true},{id:'an-rid',label:'Riders selected',type:'text',ph:'GLWB, GMDB, etc. or N/A',note:'Riders: {val}.',chk:false},{id:'an-fee',label:'Fee disclosure (M&E, rider, internal)',type:'multi',ph:'Be specific — embedded or deducted separately.',note:'Fee disclosure: {val}.',chk:true},{id:'an-emb',label:'Fees embedded in credited rate (no additional charges)',type:'check',note:'Internal expenses embedded in credited rate with no additional charges.',chk:false},{sec:'Funding & Income'},{id:'an-exch',label:'Funding source / exchange type',type:'select',opts:['New money — no exchange','1035 Exchange','Replacement — prior contract surrendered','IRA rollover / transfer','Direct funding from checking/savings'],note:'Funding: {val}.',chk:true},{id:'an-inc',label:'Income intent',type:'multi',ph:'Does client plan income? Monthly? When?',note:'Income intent: {val}.',chk:false},{sec:'Compliance'},{id:'an-bg',label:"Buyer's Guide & prospectus provided",type:'check',note:"Provided client with the Buyer's Guide and prospectus for review.",chk:true},{id:'an-sim',label:'Simon illustration reviewed',type:'check',note:'Reviewed Simon illustration with client.',chk:false},{id:'an-rb',label:'Reg BI / Form CRS disclosure provided',type:'check',note:"Reg BI best interest documented. Form CRS provided. Compensation and conflicts disclosed.",chk:true},{id:'an-rep',label:'Replacement form completed',type:'check',note:'Replacement form completed and on file.',chk:false},{id:'an-rat',label:'Suitability rationale',type:'multi',ph:"Why is this annuity in the client's best interest?",note:'Suitability rationale: {val}.',chk:true},{id:'an-dir',label:'Account type: direct annuity funding (not advisory/managed)',type:'check',note:'Account type: direct annuity funding — not advisory or managed.',chk:true}],managed_new:[{sec:'Strategy'},{id:'mn-strat',label:'Strategy name(s) & allocation(s)',type:'multi',ph:'e.g. 300k Large Cap Leaders, 200k Managed Fixed Income, 150k CWMPD',note:'Managed strategies and allocations: {val}.',chk:true},{id:'mn-plat',label:'Platform / program',type:'select',opts:['J.P. Morgan Advisory','Chase Strategic Portfolio','Managed Account (MAP)','Guided Portfolio','Self-Directed + Managed Blend'],note:'Platform: {val}.',chk:true},{id:'mn-acct',label:'Account structure',type:'select',opts:['Advisory / Managed account','Brokerage + Managed blend','IRA — Managed','Trust — Managed','Entity — Managed'],note:'Account structure: {val}.',chk:true},{sec:'Client Profile'},{id:'mn-bg',label:'Client background',type:'multi',ph:'Profession, family, key details.',note:'Client background: {val}.',chk:false},{id:'mn-con',label:'Primary concern / goal',type:'multi',ph:"Client's main financial goal.",note:"Client's concern: {val}.",chk:true},{id:'mn-noliab',label:'No major liabilities',type:'check',note:'Client reported no major liabilities.',chk:true},{id:'mn-ef',label:'Emergency fund covered',type:'check',note:'Emergency fund is covered.',chk:true},{id:'mn-home',label:'Home is paid off',type:'check',note:'Client owns their home free and clear.',chk:false},{id:'mn-out',label:'Outside Investments & Assets',type:'multi',ph:'e.g. 500k at Fidelity, 1MM 401k.',note:'Outside assets: {val}.',chk:true},{sec:'Discussion'},{id:'mn-wp',label:'Created a wealth plan and discussed goals',type:'check',note:'Created a wealth plan and discussed goals.',chk:true},{id:'mn-mkt',label:'Explained market volatility & principal risk',type:'check',note:'I took the time to explain and educate the client on how markets work, its volatility, loss of principal risk and how inflation affects their money.',chk:true},{id:'mn-th',label:'Time horizon discussed',type:'select',opts:['Less than 1 year','1-3 years','3-5 years','5-10 years','10+ years'],note:'Discussed time horizon, which at this point is {val}.',chk:true},{id:'mn-mf',label:'Mutual funds / ETFs discussed educationally (not implemented)',type:'check',note:'Mutual funds and ETFs discussed educationally; no mutual fund recommendation implemented.',chk:false},{id:'mn-bond',label:'Explained YTW & bond duration / rate relationship',type:'check',note:'Explained yield to worst and how bonds work in a teeter-totter effect with interest rates.',chk:false},{id:'mn-nr',label:'No portfolio restrictions confirmed',type:'check',note:'Verified there are no portfolio restrictions.',chk:true},{sec:'Fees & Compliance'},{id:'mn-fee',label:'Advisory fee disclosed',type:'text',ph:'e.g. 1.45% for managed portfolio',note:'Discussed advisory fee of {val}.',chk:true},{id:'mn-ie',label:'Internal expenses disclosed',type:'text',ph:'e.g. 35bps blended / discussed',note:'Internal expenses of {val} disclosed.',chk:true},{id:'mn-rb',label:'Reg BI best interest documented',type:'check',note:"Reg BI best interest obligation documented.",chk:true},{id:'mn-su',label:'Suitability confirmed — objective & risk tolerance aligned',type:'check',note:'Investment objective and risk tolerance aligned with selected managed strategy.',chk:true},{sec:'Account Opening'},{id:'mn-ds',label:'Accounts opened via DocuSign',type:'check',note:'Completed account opening via DocuSign.',chk:true},{id:'mn-fd',label:'Accounts funded via money movement',type:'check',note:'Agreed with the client for accounts to be funded via money movement once opened.',chk:true},{id:'mn-fu',label:'45-day follow-up appointment booked',type:'check',note:'Booked a follow-up appointment in 45 days to discuss first statement and answer any questions.',chk:true},{id:'mn-add',label:'Additional notes',type:'multi',ph:'Any other relevant details.',note:'Additional: {val}.',chk:false}]};
+// ── NOTE TYPE MAP ─────────────────────────────────────────────
+const NT = {
+  brokerage:[{v:'contact',l:'Client Contact / Onboarding'},{v:'trade',l:'Investment Rationale / Trade'},{v:'plan',l:'Financial Plan Review'},{v:'suitability',l:'Suitability / KYC Update'}],
+  ira:[{v:'contact',l:'Client Contact / Onboarding'},{v:'trade',l:'Investment Rationale / Trade'},{v:'plan',l:'Financial Plan Review'},{v:'suitability',l:'Suitability / KYC Update'},{v:'distribution',l:'Distribution / RMD Note'}],
+  trust:[{v:'contact',l:'Client Contact / Onboarding'},{v:'trade',l:'Investment Rationale / Trade'},{v:'suitability',l:'Suitability / Trust Governance'}],
+  business:[{v:'contact',l:'Client Contact / Onboarding'},{v:'trade',l:'Investment Rationale / Trade'},{v:'suitability',l:'Suitability / Entity KYC'}],
+  annuity:[{v:'contact',l:'Client Contact / Onboarding'},{v:'annuity_sale',l:'Annuity Sale / Exchange'},{v:'suitability',l:'Suitability Review'},{v:'plan',l:'Financial Plan Review'}],
+  managed:[{v:'contact',l:'Client Contact / Onboarding'},{v:'managed_new',l:'New Managed Strategy Note'},{v:'plan',l:'Financial Plan Review'},{v:'trade',l:'Rebalance / Trade Note'},{v:'suitability',l:'Suitability / KYC Update'}],
+};
 
-let S={acct:null,nt:null,meet:'in-person meeting'};
+// ── CHECKBOX DEFINITIONS ──────────────────────────────────────
+const CB = {
+  contact:[
+    {sec:'Client Profile'},
+    {id:'cb-bg',label:'Client background (profession, age, family)',type:'multi',ph:'e.g. Client is a retired doctor, 67yo, divorced, two grown children...',note:'Client background: {val}',chk:false},
+    {id:'cb-returning',label:'Returning / previously known client',type:'check',note:'Client is a returning client who previously worked with advisor at prior firm.',chk:false},
+    {id:'cb-walkin',label:'Client came in unannounced / walk-in',type:'check',note:'Client came into the office unannounced.',chk:false},
+    {id:'cb-couple',label:'Joint meeting — clients came as a couple',type:'check',note:'Clients came together for the appointment.',chk:false},
+    {id:'cb-concern',label:"Client's primary concern / goal",type:'multi',ph:"Client's main financial goal or concern.",note:"Client's primary concern: {val}",chk:true},
+    {id:'cb-noliab',label:'No major liabilities',type:'check',note:'Client reported no major liabilities.',chk:true},
+    {id:'cb-liab',label:'Liabilities — describe',type:'multi',ph:'e.g. Mortgage of 290k, car loan of 20k, CC debt of 2k',note:'Liabilities: {val}.',chk:false},
+    {id:'cb-ef',label:'Emergency fund covered',type:'check',note:'Emergency fund is covered.',chk:true},
+    {id:'cb-homepaid',label:'Home is paid off',type:'check',note:'Client owns their home free and clear — no mortgage.',chk:false},
+    {id:'cb-rent',label:'Client rents',type:'check',note:'Client currently rents.',chk:false},
+    {id:'cb-mortgage',label:'Client has a mortgage',type:'text',ph:'e.g. Mortgage balance of 290k',note:'Client has a mortgage: {val}.',chk:false},
+    {id:'cb-income',label:'Income amount',type:'text',ph:'e.g. $395,000 annually',note:'Client reported annual income of approximately {val}.',chk:true},
+    {id:'cb-pension',label:'Pension income',type:'text',ph:'e.g. $3,500/month from prior employer',note:'Client receives pension income of {val}.',chk:false},
+    {id:'cb-ss',label:'Social Security income',type:'text',ph:'e.g. $2,200/month',note:'Client receives Social Security income of {val}.',chk:false},
+    {id:'cb-annuity-inc',label:'Annuity income from outside carrier',type:'text',ph:'e.g. $1,500/month from Prudential annuity',note:'Client receives annuity income from an outside carrier: {val}.',chk:false},
+    {id:'cb-rental',label:'Rental / investment property income',type:'text',ph:'e.g. Two rental properties generating ~$3,000/month',note:'Client has rental/investment property income: {val}.',chk:false},
+    {id:'cb-outside',label:'Outside investments & assets',type:'multi',ph:'e.g. 1.5MM IRA at Prudential, 400k overseas, 200k at Merrill',note:'Outside assets: {val}.',chk:true},
+    {id:'cb-assetsabroad',label:'Assets held abroad',type:'multi',ph:'e.g. 400k held in accounts overseas',note:'Client has assets held abroad: {val}.',chk:false},
+    {id:'cb-estate',label:'Client is beneficiary / executor of estate',type:'multi',ph:'e.g. Client inherited 150k from parent; 401k rollover required',note:'Estate / inheritance situation: {val}.',chk:false},
+    {id:'cb-divorce',label:'Client going through divorce / separation',type:'check',note:'Client is currently going through a divorce/separation process.',chk:false},
+    {id:'cb-secondopinion',label:'Second opinion offered on outside assets',type:'check',note:"Offered a second opinion on client's existing outside investments and shared that it is always good to have a second set of eyes verify that investments are on track.",chk:false},
+    {sec:'Discussion'},
+    {id:'cb-wealthplan',label:'Created a wealth plan and discussed goals',type:'check',note:'Created a wealth plan and discussed goals.',chk:true},
+    {id:'cb-gba-scheduled',label:'GBA scheduled — follow-up to present proposal',type:'check',note:'Agreed to prepare a Goals Based Analysis (GBA); scheduled a follow-up appointment to present the investment proposal.',chk:false},
+    {id:'cb-gba-presented',label:'GBA / investment proposal presented at this meeting',type:'check',note:'Presented the Goals Based Analysis (GBA) and investment proposal at this meeting.',chk:false},
+    {id:'cb-mkteduc',label:'Explained market volatility, principal risk & inflation',type:'check',note:'I took the time to explain and educate the client on how markets work, its volatility, loss of principal risk and how inflation affects their money.',chk:true},
+    {id:'cb-mfeduc',label:'Mutual funds / ETFs discussed educationally — NOT implemented',type:'check',note:'Mutual funds and ETFs were reviewed in an educational context, and no mutual fund recommendation was implemented (therefore, A vs. C share discussion and the 1% CDTC disclosure for A shares sold within the first 12 months were not applicable to the final decision).',chk:false},
+    {id:'cb-timehorizon',label:'Time horizon discussed',type:'select',opts:['Less than 1 year','1-3 years','3-5 years','5-10 years','10+ years'],note:'Discussed time horizon, which at this point is {val}.',chk:true},
+    {id:'cb-legacy',label:'Legacy / estate planning discussed as primary goal',type:'check',note:'Client sees their money primarily as a legacy for heirs; estate planning and wealth transfer were discussed as a primary goal.',chk:false},
+    {id:'cb-inflation',label:'Discussed inflation impact on idle cash',type:'check',note:'Client recognizes how inflation is eating away at idle cash and agreed that inaction needed to stop.',chk:false},
+    {id:'cb-consolidation',label:'Discussed asset consolidation from outside firm',type:'check',note:'Discussed the possibility of consolidating assets from outside firm(s) and bringing them to JPMorganChase.',chk:false},
+    {id:'cb-rollover',label:'Discussed 401k / pension rollover',type:'multi',ph:'e.g. 137k rollover from prior employer 401k; 60-day rule explained',note:'Discussed rollover: {val}. Explained the 60-day rollover rule and the tax consequences of not completing the rollover in time.',chk:false},
+    {id:'cb-ira-rules',label:'Explained IRA regulations and distribution penalties',type:'check',note:'Explained IRA regulations including the 10% early distribution penalty and applicable income taxes for distributions prior to age 59½. Client was not previously aware of these regulations.',chk:false},
+    {id:'cb-rmd',label:'Discussed RMD requirements',type:'check',note:'Discussed Required Minimum Distribution (RMD) requirements and their implications for the account.',chk:false},
+    {id:'cb-structured',label:'Discussed structured notes / bond laddering',type:'check',note:'Discussed structured notes and bond laddering strategies as potential options.',chk:false},
+    {id:'cb-rsnip',label:'Explained RSNIP',type:'check',note:'Explained RSNIP (Retirement Security Needs Income Planning).',chk:false},
+    {id:'cb-concepts',label:'Additional concepts explained',type:'multi',ph:'e.g. YTW, bond duration, FED rate impact, teeter-totter effect, basket composition.',note:'Additional concepts explained: {val}.',chk:false},
+    {sec:'Products & Strategies'},
+    {id:'cb-products',label:'Products / strategies selected',type:'multi',ph:'e.g. 150k Large Cap Leaders, 150k CWMPD, 150k Symetra Edge Revolution FIA.',note:'Investment solutions selected: {val}.',chk:true},
+    {id:'cb-jpmcap',label:'JPMCAP strategy selected',type:'select',opts:['JPMCAP Conservative','JPMCAP Balanced','JPMCAP Growth','JPMCAP Aggressive'],note:'Selected the {val} actively managed portfolio. Client wants preservation of capital and the actively managed feature.',chk:false},
+    {id:'cb-dmas',label:'DMAS portfolio strategy',type:'check',note:'Discussed and selected the DMAS (Discretionary Managed Account Strategy) portfolio.',chk:false},
+    {id:'cb-mf-selected',label:'Mutual Funds selected — A vs C share disclosure',type:'multi',ph:'e.g. JPM Focus Dividend Growth Fund, Balanced MF/ETF portfolio',note:'Selected mutual fund(s): {val}. Discussed A vs C shares. Disclosed the 1% CDTC fee for A shares if sold within the first 12 months. Ran the FINRA Fund Analyzer tool and compared different funds to choose the one that better fits the client\'s interests.',chk:false},
+    {id:'cb-fees',label:'Advisory fee discussed',type:'text',ph:'e.g. 1.45% for LCL portfolio',note:'Discussed advisory fee of {val}.',chk:true},
+    {id:'cb-fee-exception',label:'Fee exception / manager\'s exception',type:'text',ph:'e.g. Agreed on 10% discount; fee set at 1.0%',note:'A manager\'s exception was requested and approved: {val}.',chk:false},
+    {id:'cb-ie',label:'Internal expenses discussed',type:'text',ph:'e.g. 35bps / embedded in strategy',note:'Internal expenses of {val} were disclosed and discussed.',chk:true},
+    {id:'cb-norestrict',label:'No portfolio restrictions confirmed',type:'check',note:'Verified there are no portfolio restrictions.',chk:false},
+    {sec:'Account Actions'},
+    {id:'cb-docusign',label:'Accounts opened via DocuSign',type:'check',note:'Completed account opening via DocuSign.',chk:true},
+    {id:'cb-docusign-pending',label:'DocuSign sent — awaiting signature',type:'check',note:'Sent account opening documents via DocuSign; awaiting client signature.',chk:false},
+    {id:'cb-funding',label:'Accounts to be funded via money movement',type:'check',note:'Agreed with the client for the accounts to be funded via money movement once they were opened.',chk:true},
+    {id:'cb-linkpending',label:'Accounts not yet linked — DocuSign sent for linkage',type:'check',note:'Accounts were not properly linked for funding; sent DocuSign to complete the account linkage.',chk:false},
+    {id:'cb-acat',label:'ACAT initiated — asset transfer from outside firm',type:'text',ph:'e.g. Fidelity, Merrill Lynch, Stifel',note:'Initiated ACAT transfer request to bring assets from {val} to JPMorganChase.',chk:false},
+    {id:'cb-rollover60',label:'60-day rollover attestation completed',type:'check',note:'Completed 60-day rollover attestation.',chk:false},
+    {id:'cb-journal',label:'Journal of assets completed',type:'check',note:'Completed journal of assets as instructed.',chk:false},
+    {id:'cb-redemption',label:'Redemption form signed and faxed',type:'check',note:'Client signed the redemption form which was faxed to complete the request.',chk:false},
+    {id:'cb-bridge',label:'Self-directed / brokerage account opened as bridge',type:'check',note:'Opened a self-directed brokerage account to serve as a bridge to hold the assets until a proper investment discussion could take place.',chk:false},
+    {id:'cb-beneficiary',label:'Beneficiary update completed',type:'check',note:'Completed beneficiary update forms and submitted for processing.',chk:false},
+    {sec:'Account Opening & Follow-Up'},
+    {id:'cb-followup45',label:'45-day follow-up appointment booked',type:'check',note:'As part of the onboarding process booked a follow up appointment in 45 days to discuss 1st statement and answer any questions that the client might have.',chk:true},
+    {id:'cb-addl',label:'Additional notes',type:'multi',ph:'Any other relevant details.',note:'Additional: {val}.',chk:false},
+  ],
 
-function autoFillIncome(){
-  const v=document.getElementById('f-income');
-  const s=document.getElementById('sb-inc');
-  if(v&&s&&!s._m)s.value=v.value;
-}
+  trade:[
+    {sec:'Trade Details'},
+    {id:'tr-security',label:'Security / Instrument',type:'text',ph:'Ticker, CUSIP, or full product name',note:'Security/instrument: {val}.',chk:true},
+    {id:'tr-action',label:'Trade action',type:'select',opts:['Buy','Sell','Exchange','Rollover','Rebalance','Liquidate','1035 Exchange','Liquidation to Cash'],note:'Trade action: {val}.',chk:true},
+    {id:'tr-amount',label:'Dollar amount / units',type:'text',ph:'e.g. $100,000 or 500 shares',note:'Amount: {val}.',chk:true},
+    {id:'tr-solicited',label:'Solicited — advisor recommended',type:'check',note:'This trade was solicited — advisor recommended.',chk:true},
+    {id:'tr-unsolicited',label:'Unsolicited — client requested',type:'check',note:'This trade was unsolicited — client requested.',chk:false},
+    {id:'tr-liquidation',label:'Client requested full liquidation to cash',type:'check',note:'Client confirmed the instruction to liquidate position to cash. Discussed the loss that would be incurred by liquidating and client gave the green light to proceed.',chk:false},
+    {sec:'Suitability'},
+    {id:'tr-objective',label:'Investment objective',type:'select',opts:['Capital Preservation','Income','Growth & Income','Growth','Aggressive Growth','Speculation'],note:'Investment objective: {val}.',chk:true},
+    {id:'tr-risk',label:'Risk tolerance',type:'select',opts:['Conservative','Moderate Conservative','Moderate','Moderate Aggressive','Aggressive'],note:'Risk tolerance: {val}.',chk:true},
+    {id:'tr-th',label:'Time horizon',type:'select',opts:['< 1 Year','1–3 Years','3–5 Years','5–10 Years','10+ Years'],note:'Time horizon: {val}.',chk:true},
+    {id:'tr-rationale',label:'Investment rationale',type:'multi',ph:'Why is this suitable for this client now?',note:'Investment rationale: {val}.',chk:true},
+    {id:'tr-alts',label:'Alternatives considered',type:'multi',ph:'What else was reviewed?',note:'Alternatives considered: {val}.',chk:false},
+    {id:'tr-tax',label:'Tax consequences discussed',type:'check',note:'Explained the tax consequences of changing investment products and client agreed.',chk:false},
+    {sec:'Fees & Compliance'},
+    {id:'tr-fees',label:'Fees / internal expenses disclosed',type:'text',ph:'e.g. 1.45%, internal expense ratio discussed',note:'Fees and internal expenses disclosed: {val}.',chk:true},
+    {id:'tr-mf',label:'Mutual Funds selected — A vs C share disclosure',type:'multi',ph:'Fund name(s)',note:'Selected mutual fund(s): {val}. Discussed A vs C shares. Disclosed the 1% CDTC fee for A shares if sold within the first 12 months. Ran the FINRA Fund Analyzer tool and compared different funds to choose the one that better fits the client\'s interests.',chk:false},
+    {id:'tr-regbi',label:'Reg BI best interest documented',type:'check',note:"Reg BI best interest obligation documented. This recommendation is in the client's best interest based on their investment profile and objectives.",chk:true},
+    {id:'tr-rsnip',label:'Explained RSNIP',type:'check',note:'Explained RSNIP (Retirement Security Needs Income Planning).',chk:false},
+  ],
 
-function migrateToSB(){
-  // Helper: get value from a checkbox input by checkbox id
-  function cbVal(id){
-    const chk=document.getElementById(id);
-    const inp=document.getElementById(id+'-val');
-    if(chk&&chk.checked&&inp) return inp.value.trim();
-    return '';
-  }
-  function cbChecked(id){
-    const chk=document.getElementById(id);
-    return chk&&chk.checked;
-  }
+  plan:[
+    {sec:'Review'},
+    {id:'pl-revtype',label:'Review type',type:'select',opts:['Initial Wealth Plan','Annual Review','Semi-Annual Review','Ad-hoc Review'],note:'Review type: {val}.',chk:true},
+    {id:'pl-goals',label:'Financial goals reviewed',type:'multi',ph:'Retirement, income, estate, liquidity, education, inflation.',note:'Goals reviewed: {val}.',chk:true},
+    {id:'pl-horizon',label:'Time horizon',type:'text',ph:'e.g. 15 years to retirement',note:'Time horizon discussed: {val}.',chk:true},
+    {id:'pl-perf',label:'Portfolio performance / allocation reviewed',type:'multi',ph:'YTD, benchmark, allocation overview.',note:'Portfolio performance reviewed: {val}.',chk:false},
+    {id:'pl-changes',label:'Recommendations / changes to plan',type:'multi',ph:'What was adjusted or recommended?',note:'Recommendations: {val}.',chk:true},
+    {id:'pl-next',label:'Next steps',type:'multi',ph:'Follow-up actions, documents, next meeting.',note:'Next steps: {val}.',chk:false},
+    {sec:'Disclosures'},
+    {id:'pl-mkteduc',label:'Market volatility & inflation explained',type:'check',note:'Explained market volatility, loss of principal risk, and how inflation affects purchasing power.',chk:true},
+    {id:'pl-rsnip',label:'Explained RSNIP',type:'check',note:'Explained RSNIP (Retirement Security Needs Income Planning).',chk:false},
+  ],
 
-  // Income — from Step 1 field
-  const inc=document.getElementById('f-income');
-  const sbInc=document.getElementById('sb-inc');
-  if(inc&&sbInc&&inc.value.trim()&&!sbInc._m) sbInc.value=inc.value.trim();
+  suitability:[
+    {sec:'Reason for Update'},
+    {id:'su-trigger',label:'Reason for update',type:'select',opts:['Annual Review','Material Life Change','Client Request','Account Opening','Compliance Requirement'],note:'Reason for suitability update: {val}.',chk:true},
+    {sec:'Updated Profile'},
+    {id:'su-changes',label:'Material changes in client circumstances',type:'multi',ph:'Employment, income, net worth, marital status, dependents, health, tax status.',note:'Material changes in circumstances: {val}.',chk:false},
+    {id:'su-fininfo',label:'Updated financial information',type:'multi',ph:'Annual income, liquid net worth, total net worth, tax bracket.',note:'Updated financial information: {val}.',chk:true},
+    {id:'su-obj',label:'Updated investment objective',type:'select',opts:['Capital Preservation','Income','Growth & Income','Growth','Aggressive Growth','Speculation','No Change'],note:'Updated investment objective: {val}.',chk:true},
+    {id:'su-risk',label:'Updated risk tolerance',type:'select',opts:['Conservative','Moderate Conservative','Moderate','Moderate Aggressive','Aggressive','No Change'],note:'Updated risk tolerance: {val}.',chk:true},
+    {sec:'Confirmation'},
+    {id:'su-confirm',label:'Client confirmation method',type:'select',opts:['Verbal — Phone','Verbal — In-Person','Written — Signed Form','Electronic — DocuSign','Email Acknowledgment'],note:'Client confirmed changes via: {val}.',chk:true},
+    {id:'su-suitable',label:'Current holdings remain suitable',type:'check',note:'Based on the updated client profile, existing account holdings and investment strategy remain suitable.',chk:true},
+  ],
 
-  // Outside Liquid Assets — from checked outside assets checkbox
-  const sbOla=document.getElementById('sb-ola');
-  if(sbOla&&!sbOla._m){
-    const val=cbVal('cb-outside')||cbVal('mn-out')||cbVal('mn-outside');
-    if(val) sbOla.value=val;
-  }
+  distribution:[
+    {sec:'Distribution Details'},
+    {id:'di-type',label:'Distribution type',type:'select',opts:['Required Minimum Distribution (RMD)','Early Withdrawal','Normal Distribution','72(t) SEPP','Roth Conversion','Rollover / Transfer Out'],note:'Distribution type: {val}.',chk:true},
+    {id:'di-amount',label:'Distribution amount',type:'text',ph:'Dollar amount',note:'Distribution amount: {val}.',chk:true},
+    {sec:'Tax Withholding'},
+    {id:'di-fed',label:'Federal tax withholding election',type:'select',opts:['10% — Default','Greater than 10%','Waived — Client Elected No Withholding'],note:'Federal withholding election: {val}.',chk:true},
+    {id:'di-state',label:'State tax withholding',type:'select',opts:['Per state default','Greater than default','Waived by client','N/A — No state income tax'],note:'State withholding: {val}.',chk:true},
+    {sec:'Disclosures'},
+    {id:'di-taxdisc',label:'Tax consequences disclosed',type:'multi',ph:'Ordinary income, 10% penalty if applicable, Roth ordering rules.',note:'Tax consequences disclosed to client: {val}.',chk:true},
+    {id:'di-rmd',label:'RMD calculation basis',type:'text',ph:'Prior year-end balance, life expectancy factor.',note:'RMD calculation basis: {val}.',chk:false},
+    {id:'di-penalty',label:'10% early withdrawal penalty discussed (under 59½)',type:'check',note:'10% early withdrawal penalty for distributions prior to age 59½ was disclosed and discussed.',chk:false},
+    {id:'di-rsnip',label:'Explained RSNIP',type:'check',note:'Explained RSNIP (Retirement Security Needs Income Planning).',chk:false},
+  ],
 
-  // Advisory Fee — from checked advisory fee checkbox
-  const sbFee=document.getElementById('sb-fee');
-  if(sbFee&&!sbFee._m){
-    const val=cbVal('cb-fees')||cbVal('mn-fee');
-    if(val) sbFee.value=val;
-  }
+  annuity_sale:[
+    {sec:'Product Details'},
+    {id:'an-carrier',label:'Carrier & product name',type:'text',ph:'e.g. Pacific Life Mariner 3-Year GROP',note:'Product: {val}.',chk:true},
+    {id:'an-type',label:'Annuity type',type:'select',opts:['Fixed Annuity','Fixed Indexed Annuity (FIA)','Variable Annuity','RILA','Immediate Annuity','Deferred Income Annuity'],note:'Annuity type: {val}.',chk:true},
+    {id:'an-premium',label:'Premium / funding amount',type:'text',ph:'e.g. $100,000',note:'Premium amount: {val}.',chk:true},
+    {id:'an-rate',label:'Credited rate / cap / buffer',type:'text',ph:'e.g. 4.55% fixed',note:'Credited rate / cap: {val}.',chk:true},
+    {id:'an-annuitant',label:'Annuitant & beneficiary',type:'text',ph:'e.g. Client is annuitant; spouse is beneficiary',note:'Account structure: {val}.',chk:true},
+    {id:'an-direct',label:'Direct annuity funding (not advisory/managed)',type:'check',note:'Account type: direct annuity funding — not advisory or managed.',chk:true},
+    {sec:'Terms & Fees'},
+    {id:'an-surrender',label:'Surrender charge schedule disclosed',type:'text',ph:'e.g. 7% declining over 7 years',note:'Surrender charge schedule: {val}. I explained key considerations including withdrawal provisions and surrender penalties/limitations on access to principal.',chk:true},
+    {id:'an-riders',label:'Riders selected',type:'text',ph:'GLWB, GMDB, etc. or N/A',note:'Riders: {val}.',chk:false},
+    {id:'an-fees',label:'Fee disclosure (M&E, rider, internal)',type:'multi',ph:'Be specific — state if embedded or deducted separately.',note:'Fee disclosure: {val}.',chk:true},
+    {id:'an-embedded',label:'Fees embedded in credited rate (no additional charges)',type:'check',note:'Internal expenses are built into the credited rate with no additional charges.',chk:false},
+    {sec:'Funding & Income'},
+    {id:'an-exchange',label:'Funding source / exchange type',type:'select',opts:['New money — no 1035 exchange','1035 Exchange from existing annuity','Replacement — prior contract surrendered','IRA rollover / transfer','Direct funding from checking/savings'],note:'Funding: {val}.',chk:true},
+    {id:'an-income',label:'Income intent',type:'multi',ph:'Does client plan to take income? Monthly? Annually? When?',note:'Income intent: {val}.',chk:false},
+    {sec:'Compliance & Documents'},
+    {id:'an-buyersguide',label:"Buyer's Guide & prospectus provided",type:'check',note:"The Buyer's Guide and prospectus were provided to the client for review.",chk:true},
+    {id:'an-simon',label:'Simon illustration reviewed',type:'check',note:'Reviewed Simon illustration with client.',chk:false},
+    {id:'an-regbi',label:'Reg BI / Form CRS disclosure provided',type:'check',note:"Reg BI best interest obligation documented. Form CRS provided. This recommendation is in the client's best interest — compensation and conflicts of interest have been disclosed.",chk:true},
+    {id:'an-replace',label:'Replacement form completed',type:'check',note:'Replacement form completed and retained on file.',chk:false},
+    {id:'an-rationale',label:'Suitability rationale',type:'multi',ph:"Why is this annuity in the client's best interest?",note:'Suitability rationale: {val}.',chk:true},
+    {id:'an-rsnip',label:'Explained RSNIP',type:'check',note:'Explained RSNIP (Retirement Security Needs Income Planning).',chk:false},
+  ],
 
-  // Internal Expenses — from checked internal expenses checkbox
-  const sbIe=document.getElementById('sb-ie');
-  if(sbIe&&!sbIe._m){
-    const val=cbVal('cb-ie')||cbVal('mn-ie');
-    if(val) sbIe.value=val;
-  }
+  managed_new:[
+    {sec:'Strategy & Account'},
+    {id:'mn-strategy',label:'Strategy name(s) & allocation(s)',type:'multi',ph:'e.g. $300,000 Large Cap Leaders, $150,000 CWMPD, $150,000 JPMCAP Balanced',note:'Managed strategies selected: {val}.',chk:true},
+    {id:'mn-jpmcap',label:'JPMCAP strategy selected',type:'select',opts:['JPMCAP Conservative','JPMCAP Balanced','JPMCAP Growth','JPMCAP Aggressive'],note:'Selected the {val} actively managed portfolio. Client likes the actively managed feature.',chk:false},
+    {id:'mn-dmas',label:'DMAS portfolio strategy',type:'check',note:'Selected the DMAS (Discretionary Managed Account Strategy) portfolio.',chk:false},
+    {id:'mn-platform',label:'Platform / program',type:'select',opts:['J.P. Morgan Advisory','Chase Strategic Portfolio','Managed Account (MAP)','Guided Portfolio','Self-Directed + Managed Blend'],note:'Platform: {val}.',chk:true},
+    {id:'mn-accttype',label:'Account structure',type:'select',opts:['Advisory / Managed account','Brokerage + Managed blend','IRA — Managed','Trust — Managed','Entity — Managed'],note:'Account structure: {val}.',chk:true},
+    {sec:'Client Profile'},
+    {id:'mn-bg',label:'Client background',type:'multi',ph:'Profession, age, family situation, key personal details.',note:'Client background: {val}.',chk:false},
+    {id:'mn-couple',label:'Joint meeting — clients came as a couple',type:'check',note:'Clients came together for the appointment.',chk:false},
+    {id:'mn-concern',label:"Client's primary concern / goal",type:'multi',ph:"Client's main financial goal.",note:"Client's primary concern: {val}.",chk:true},
+    {id:'mn-noliab',label:'No major liabilities',type:'check',note:'Client reported no major liabilities.',chk:true},
+    {id:'mn-ef',label:'Emergency fund covered',type:'check',note:'Emergency fund is covered.',chk:true},
+    {id:'mn-homepaid',label:'Home is paid off',type:'check',note:'Client owns their home free and clear.',chk:false},
+    {id:'mn-rent',label:'Client rents',type:'check',note:'Client currently rents.',chk:false},
+    {id:'mn-income',label:'Income amount',type:'text',ph:'e.g. $235,000 annually',note:'Client reported annual income of approximately {val}.',chk:true},
+    {id:'mn-pension',label:'Pension income',type:'text',ph:'e.g. $3,500/month',note:'Client receives pension income of {val}.',chk:false},
+    {id:'mn-ss',label:'Social Security income',type:'text',ph:'e.g. $2,200/month',note:'Client receives Social Security income of {val}.',chk:false},
+    {id:'mn-outside',label:'Outside investments & assets',type:'multi',ph:'e.g. 500k at Fidelity, 1MM 401k at Vanguard.',note:'Outside assets: {val}.',chk:true},
+    {sec:'Discussion'},
+    {id:'mn-wealthplan',label:'Created a wealth plan and discussed goals',type:'check',note:'Created a wealth plan and discussed goals.',chk:true},
+    {id:'mn-gba',label:'GBA presented at this meeting',type:'check',note:'Presented the Goals Based Analysis (GBA) and investment proposal.',chk:false},
+    {id:'mn-mkteduc',label:'Explained market volatility & principal risk',type:'check',note:'I took the time to explain and educate the client on how markets work, its volatility, loss of principal risk and how inflation affects their money.',chk:true},
+    {id:'mn-timehorizon',label:'Time horizon discussed',type:'select',opts:['Less than 1 year','1-3 years','3-5 years','5-10 years','10+ years'],note:'Discussed time horizon, which at this point is {val}.',chk:true},
+    {id:'mn-mfeduc',label:'Mutual funds / ETFs reviewed educationally — not implemented',type:'check',note:'Mutual funds and ETFs were reviewed in an educational context; no mutual fund recommendation was implemented.',chk:false},
+    {id:'mn-mf-selected',label:'Mutual Funds selected — A vs C share disclosure',type:'multi',ph:'Fund name(s)',note:'Selected mutual fund(s): {val}. Discussed A vs C shares. Disclosed the 1% CDTC fee for A shares if sold within the first 12 months. Ran the FINRA Fund Analyzer tool and compared different funds to choose the one that better fits the client\'s interests.',chk:false},
+    {id:'mn-bondeduc',label:'Explained YTW & bond/rate relationship',type:'check',note:'Explained yield to worst concept and how bonds work in a teeter-totter effect with interest rates. Explained how a rate move by the Fed could affect the short-term outlook and portfolio duration.',chk:false},
+    {id:'mn-structured',label:'Discussed structured notes / bond laddering',type:'check',note:'Discussed structured notes and bond laddering strategies as potential options.',chk:false},
+    {id:'mn-consolidation',label:'Discussed consolidation of outside assets',type:'check',note:'Discussed consolidating assets from outside firm(s) into JPMorganChase.',chk:false},
+    {id:'mn-acat',label:'ACAT initiated',type:'text',ph:'e.g. Fidelity, Merrill Lynch',note:'Initiated ACAT transfer from {val}.',chk:false},
+    {id:'mn-norestrict',label:'No portfolio restrictions confirmed',type:'check',note:'Verified there are no portfolio restrictions.',chk:true},
+    {id:'mn-rsnip',label:'Explained RSNIP',type:'check',note:'Explained RSNIP (Retirement Security Needs Income Planning).',chk:false},
+    {sec:'Fees & Compliance'},
+    {id:'mn-fee',label:'Advisory fee disclosed',type:'text',ph:'e.g. 1.45% for managed portfolio',note:'Discussed advisory fee of {val}.',chk:true},
+    {id:'mn-fee-exception',label:'Fee exception / manager\'s exception',type:'text',ph:'e.g. Agreed on 1.0% (10% discount)',note:'A manager\'s exception was requested and approved: {val}.',chk:false},
+    {id:'mn-ie',label:'Internal expenses / expense ratio disclosed',type:'text',ph:'e.g. 35bps blended / discussed',note:'Internal expenses of {val} disclosed and discussed.',chk:true},
+    {id:'mn-regbi',label:'Reg BI best interest documented',type:'check',note:"Reg BI best interest obligation documented. This recommendation is in the client's best interest based on their investment profile, objectives, and financial situation.",chk:true},
+    {id:'mn-suitable',label:'Suitability confirmed — objective & risk tolerance aligned',type:'check',note:'Investment objective and risk tolerance are aligned with the selected managed strategy.',chk:true},
+    {sec:'Account Opening & Follow-Up'},
+    {id:'mn-docusign',label:'Accounts opened via DocuSign',type:'check',note:'Completed account opening via DocuSign.',chk:true},
+    {id:'mn-docusign-pending',label:'DocuSign sent — awaiting signature',type:'check',note:'Sent account opening documents via DocuSign; awaiting client signature.',chk:false},
+    {id:'mn-funding',label:'Accounts to be funded via money movement',type:'check',note:'Agreed with the client for the accounts to be funded via money movement once they were opened.',chk:true},
+    {id:'mn-linkpending',label:'Accounts not yet linked — DocuSign sent for linkage',type:'check',note:'Accounts were not properly linked for funding; sent DocuSign to complete account linkage.',chk:false},
+    {id:'mn-followup45',label:'45-day follow-up appointment booked',type:'check',note:'As part of the onboarding process booked a follow up appointment in 45 days to discuss 1st statement and answer any questions that the client might have.',chk:true},
+    {id:'mn-addl',label:'Additional notes',type:'multi',ph:'Any other relevant details.',note:'Additional: {val}.',chk:false},
+  ],
+};
 
-  // House — from home paid / rents checkboxes
-  const sbHouse=document.getElementById('sb-house');
-  if(sbHouse&&!sbHouse._m){
-    if(cbChecked('cb-homepaid')||cbChecked('mn-homepaid')) sbHouse.value='House is paid for';
-    else if(cbChecked('cb-rent')) sbHouse.value='Client rents';
-  }
+// ── STATE ─────────────────────────────────────────────────────
+let S = {accts:[], nt:null, meet:'in-person meeting'};
 
-  // Time Horizon — from time horizon checkbox select
-  const sbTh=document.getElementById('sb-th');
-  if(sbTh&&!sbTh._m){
-    const val=cbVal('cb-timehorizon')||cbVal('mn-timehorizon');
-    if(val){
-      // Match dropdown option
-      Array.from(sbTh.options).forEach(opt=>{
-        if(opt.value===val||opt.text===val) sbTh.value=opt.value;
-      });
-    }
-  }
-}
+// ── API KEY ───────────────────────────────────────────────────
+function getKey(){return localStorage.getItem('jpm_anthropic_key')||'';}
+function saveKey(k){localStorage.setItem('jpm_anthropic_key',k);}
 
+// ── ACCOUNT CHIPS (multi-select) ──────────────────────────────
 document.getElementById('acct-chips').querySelectorAll('.chip').forEach(el=>{
   el.addEventListener('click',()=>{
-    document.getElementById('acct-chips').querySelectorAll('.chip').forEach(c=>c.classList.remove('on'));
-    el.classList.add('on');S.acct=el.dataset.v;S.nt=null;renderNT();checkBtn0();
+    el.classList.toggle('on');
+    S.accts = [...document.getElementById('acct-chips').querySelectorAll('.chip.on')].map(c=>c.dataset.v);
+    updateAcctNote();
+    renderNT();
+    checkBtn0();
   });
 });
+
+function updateAcctNote(){
+  const note = document.getElementById('acct-note');
+  if(S.accts.length > 1){
+    note.style.display='block';
+    note.textContent = '★ Multiple account types selected: ' + S.accts.join(', ') + ' — note will cover all.';
+  } else {
+    note.style.display='none';
+  }
+}
+
 function renderNT(){
-  const c=document.getElementById('nt-card'),ch=document.getElementById('nt-chips');
-  c.style.opacity='1';c.style.pointerEvents='auto';ch.innerHTML='';
-  (NT[S.acct]||[]).forEach(n=>{
+  const c=document.getElementById('nt-card'), ch=document.getElementById('nt-chips');
+  if(S.accts.length===0){c.style.opacity='.4';c.style.pointerEvents='none';ch.innerHTML='';return;}
+  c.style.opacity='1';c.style.pointerEvents='auto';
+
+  // Build union of note types across all selected account types
+  const seen=new Set(); const combined=[];
+  S.accts.forEach(a=>{
+    (NT[a]||[]).forEach(n=>{if(!seen.has(n.v)){seen.add(n.v);combined.push(n);}});
+  });
+
+  ch.innerHTML='';
+  combined.forEach(n=>{
     const el=document.createElement('div');el.className='chip';el.dataset.v=n.v;
-    el.innerHTML='<span class="ci">'+n.l[0]+'</span>'+n.l;
-    el.addEventListener('click',()=>{ch.querySelectorAll('.chip').forEach(c=>c.classList.remove('on'));el.classList.add('on');S.nt=n.v;checkBtn0();});
+    if(S.nt===n.v) el.classList.add('on');
+    el.innerHTML=`<span class="ci">${n.l[0]}</span>${n.l}`;
+    el.addEventListener('click',()=>{
+      ch.querySelectorAll('.chip').forEach(c=>c.classList.remove('on'));
+      el.classList.add('on'); S.nt=n.v; checkBtn0();
+    });
     ch.appendChild(el);
   });
 }
-function checkBtn0(){document.getElementById('btn0').disabled=!(S.acct&&S.nt);}
 
+function checkBtn0(){document.getElementById('btn0').disabled=!(S.accts.length>0&&S.nt);}
+
+// ── MEET PILLS ────────────────────────────────────────────────
 document.getElementById('meet-pills').querySelectorAll('.rpill').forEach(el=>{
   el.addEventListener('click',()=>{
     document.getElementById('meet-pills').querySelectorAll('.rpill').forEach(p=>p.classList.remove('on'));
-    el.classList.add('on');S.meet=el.dataset.v;
+    el.classList.add('on'); S.meet=el.dataset.v;
   });
 });
 
+// ── ACCOUNT NUMBER PENDING TOGGLE ─────────────────────────────
+function toggleAcctNum(){
+  const pending = document.getElementById('f-acct-pending').checked;
+  const inp = document.getElementById('f-acct');
+  inp.disabled = pending;
+  inp.placeholder = pending ? 'Account number pending — not yet assigned' : 'e.g. 123-456789';
+  if(pending) inp.value='';
+}
+
+// ── REFERRAL OTHER TOGGLE ─────────────────────────────────────
+function toggleRefOther(){
+  const sel = document.getElementById('f-ref').value;
+  const other = document.getElementById('f-ref-other');
+  other.style.display = sel==='Other' ? 'block' : 'none';
+}
+
+// ── EXTRA ACCOUNT FIELDS ──────────────────────────────────────
 function renderExtraFields(){
-  const el=document.getElementById('extra-fields');el.innerHTML='';
+  const el=document.getElementById('extra-fields'); el.innerHTML='';
   let h='';
-  if(S.acct==='trust')h='<hr class="div"><div class="r2"><div class="fg"><label class="fl">Trust Name</label><input type="text" id="f-trust" placeholder="Legal trust name"></div><div class="fg"><label class="fl">Trustee(s)</label><input type="text" id="f-trustee" placeholder="Full legal name(s)"></div></div>';
-  else if(S.acct==='business')h='<hr class="div"><div class="r2"><div class="fg"><label class="fl">Entity Name</label><input type="text" id="f-entity" placeholder="Legal entity name"></div><div class="fg"><label class="fl">Authorized Signer</label><input type="text" id="f-signer" placeholder="Name and title"></div></div>';
-  else if(S.acct==='ira')h='<hr class="div"><div class="r2"><div class="fg"><label class="fl">IRA Type</label><select id="f-iratype"><option>Traditional IRA</option><option>Roth IRA</option><option>SEP IRA</option><option>SIMPLE IRA</option><option>Inherited IRA</option></select></div><div class="fg"><label class="fl">Beneficiary Status</label><select id="f-bene"><option>On file — current</option><option>On file — needs update</option><option>None on file</option></select></div></div>';
-  else if(S.acct==='annuity')h='<hr class="div"><div class="r2"><div class="fg"><label class="fl">Annuitant Name</label><input type="text" id="f-annuitant" placeholder="Full name"></div><div class="fg"><label class="fl">Beneficiary</label><input type="text" id="f-annu-bene" placeholder="Name and relationship"></div></div>';
+  if(S.accts.includes('trust'))
+    h+=`<hr class="div"><div class="r2"><div class="fg"><label class="fl">Trust Name</label><input type="text" id="f-trust" placeholder="Legal trust name"></div><div class="fg"><label class="fl">Trustee(s)</label><input type="text" id="f-trustee" placeholder="Full legal name(s)"></div></div>`;
+  if(S.accts.includes('business'))
+    h+=`<hr class="div"><div class="r2"><div class="fg"><label class="fl">Entity Name</label><input type="text" id="f-entity" placeholder="Legal entity name"></div><div class="fg"><label class="fl">Authorized Signer</label><input type="text" id="f-signer" placeholder="Name and title"></div></div>`;
+  if(S.accts.includes('ira'))
+    h+=`<hr class="div"><div class="r2"><div class="fg"><label class="fl">IRA Type</label><select id="f-iratype"><option>Traditional IRA</option><option>Roth IRA</option><option>SEP IRA</option><option>SIMPLE IRA</option><option>Inherited IRA</option></select></div><div class="fg"><label class="fl">Beneficiary Status</label><select id="f-bene"><option>On file — current</option><option>On file — needs update</option><option>None on file</option></select></div></div>`;
+  if(S.accts.includes('annuity'))
+    h+=`<hr class="div"><div class="r2"><div class="fg"><label class="fl">Annuitant Name</label><input type="text" id="f-annuitant" placeholder="Full name"></div><div class="fg"><label class="fl">Beneficiary</label><input type="text" id="f-annu-bene" placeholder="Name and relationship"></div></div>`;
   el.innerHTML=h;
 }
 
+// ── RENDER CHECKBOX FIELDS ────────────────────────────────────
 function renderCBFields(){
-  const cont=document.getElementById('cb-fields');cont.innerHTML='';
+  const container=document.getElementById('cb-fields');
+  container.innerHTML='';
   const items=CB[S.nt]||[];
-  document.getElementById('p2-title').textContent=NT[S.acct]?.find(n=>n.v===S.nt)?.l||'Note';
-  const iv=document.getElementById('f-income')?.value.trim();
-  const si=document.getElementById('sb-inc');
-  if(iv&&si&&!si._m)si.value=iv;
+  const ntLabel=getNTLabel();
+  document.getElementById('p2-title').textContent=ntLabel;
 
   items.forEach(item=>{
-    if(item.sec!==undefined){const h=document.createElement('div');h.className='sec-head';h.textContent=item.sec;cont.appendChild(h);return;}
-    const wrap=document.createElement('div');wrap.className='cb-item'+(item.chk?' on':'');
+    if(item.sec!==undefined){
+      const h=document.createElement('div');h.className='sec-head';h.textContent=item.sec;
+      container.appendChild(h);return;
+    }
+    const wrap=document.createElement('div');
+    wrap.className='cb-item'+(item.chk?' on':'');
     const chk=document.createElement('input');chk.type='checkbox';chk.className='cb-chk';chk.id=item.id;chk.checked=!!item.chk;
     const body=document.createElement('div');body.className='cb-body';
-    const lbl=document.createElement('span');lbl.className='cb-label';lbl.textContent=item.label;body.appendChild(lbl);
+    const lbl=document.createElement('label');lbl.className='cb-label';lbl.htmlFor=item.id;lbl.textContent=item.label;
+    body.appendChild(lbl);
+
+    let inputWrap=null;
     if(item.type!=='check'){
-      const iw=document.createElement('div');iw.className='cb-inp'+(item.chk?' show':'');iw.id=item.id+'-w';
-      if(item.type==='text'){const inp=document.createElement('input');inp.type='text';inp.id=item.id+'-v';inp.placeholder=item.ph||'';iw.appendChild(inp);}
-      else if(item.type==='select'){const sel=document.createElement('select');sel.id=item.id+'-v';(item.opts||[]).forEach(o=>{const op=document.createElement('option');op.textContent=o;sel.appendChild(op);});iw.appendChild(sel);}
-      else{const ta=document.createElement('textarea');ta.id=item.id+'-v';ta.placeholder=item.ph||'';iw.appendChild(ta);}
-      body.appendChild(iw);
+      inputWrap=document.createElement('div');
+      inputWrap.className='cb-inp'+(item.chk?' show':'');
+      inputWrap.id=item.id+'-wrap';
+      if(item.type==='text'){
+        const inp=document.createElement('input');inp.type='text';inp.id=item.id+'-val';inp.placeholder=item.ph||'';
+        inp.addEventListener('click',e=>e.stopPropagation());inp.addEventListener('input',e=>e.stopPropagation());
+        inputWrap.appendChild(inp);
+      } else if(item.type==='select'){
+        const sel=document.createElement('select');sel.id=item.id+'-val';
+        (item.opts||[]).forEach(o=>{const op=document.createElement('option');op.textContent=o;sel.appendChild(op);});
+        sel.addEventListener('click',e=>e.stopPropagation());sel.addEventListener('change',e=>e.stopPropagation());
+        inputWrap.appendChild(sel);
+      } else if(item.type==='multi'){
+        const ta=document.createElement('textarea');ta.id=item.id+'-val';ta.placeholder=item.ph||'';
+        ta.addEventListener('click',e=>e.stopPropagation());ta.addEventListener('input',e=>{e.stopPropagation();});
+        inputWrap.appendChild(ta);
+      }
+      body.appendChild(inputWrap);
     }
+
     wrap.appendChild(chk);wrap.appendChild(body);
-    wrap.addEventListener('click',function(e){
-      const t=e.target;
-      if(t.tagName==='INPUT'&&t.type==='text')return;
-      if(t.tagName==='SELECT'||t.tagName==='TEXTAREA')return;
-      if(t.closest('.cb-inp'))return;
-      const nv=!chk.checked;chk.checked=nv;
-      wrap.classList.toggle('on',nv);
-      const iw=document.getElementById(item.id+'-w');
-      if(iw)iw.classList.toggle('show',nv);
+
+    wrap.addEventListener('click',e=>{
+      if(e.target.tagName==='INPUT'&&e.target.type==='text') return;
+      if(e.target.tagName==='TEXTAREA'||e.target.tagName==='SELECT') return;
+      if(e.target.closest('.cb-inp')) return;
+      if(e.target===chk) return;
+      chk.checked=!chk.checked;
+      wrap.classList.toggle('on',chk.checked);
+      if(inputWrap) inputWrap.classList.toggle('show',chk.checked);
     });
-    cont.appendChild(wrap);
+    chk.addEventListener('change',()=>{
+      wrap.classList.toggle('on',chk.checked);
+      if(inputWrap) inputWrap.classList.toggle('show',chk.checked);
+      // Auto-migrate house/time horizon when checked
+      migrateToSB();
+    });
+
+    container.appendChild(wrap);
   });
+
+  migrateToSB();
 }
 
+// ── COLLECT CHECKED ITEMS ─────────────────────────────────────
 function collectChecked(){
   const items=CB[S.nt]||[];const lines=[];
   items.forEach(item=>{
-    if(item.sec!==undefined)return;
+    if(item.sec!==undefined) return;
     const chk=document.getElementById(item.id);
-    if(!chk||!chk.checked)return;
+    if(!chk||!chk.checked) return;
     let note=item.note||'';
-    if(item.type!=='check'){const v=document.getElementById(item.id+'-v');note=note.replace('{val}',v?v.value.trim()||'[not specified]':'[not specified]');}
+    if(item.type!=='check'){
+      const valEl=document.getElementById(item.id+'-val');
+      const val=valEl?valEl.value.trim():'';
+      note=note.replace('{val}',val||'[not specified]');
+    }
     lines.push(note);
   });
   return lines.join('\n');
 }
 
+// ── MIGRATION ─────────────────────────────────────────────────
+function autoFillIncome(){
+  const v=document.getElementById('f-income');
+  const s=document.getElementById('sb-inc');
+  if(v&&s&&!s._m) s.value=v.value;
+}
+
+function cbVal(id){
+  const chk=document.getElementById(id);
+  const inp=document.getElementById(id+'-val');
+  if(chk&&chk.checked&&inp) return inp.value.trim();
+  return '';
+}
+function cbChecked(id){const chk=document.getElementById(id);return !!(chk&&chk.checked);}
+
+function migrateToSB(){
+  // Income from step 1
+  const inc=document.getElementById('f-income');
+  const sbInc=document.getElementById('sb-inc');
+  if(inc&&sbInc&&inc.value.trim()&&!sbInc._m) sbInc.value=inc.value.trim();
+
+  // Outside assets
+  const sbOla=document.getElementById('sb-ola');
+  if(sbOla&&!sbOla._m){
+    const v=cbVal('cb-outside')||cbVal('mn-outside')||cbVal('mn-out');
+    if(v) sbOla.value=v;
+  }
+
+  // Advisory fee
+  const sbFee=document.getElementById('sb-fee');
+  if(sbFee&&!sbFee._m){
+    const v=cbVal('cb-fees')||cbVal('mn-fee');
+    if(v) sbFee.value=v;
+  }
+
+  // Internal expenses
+  const sbIe=document.getElementById('sb-ie');
+  if(sbIe&&!sbIe._m){
+    const v=cbVal('cb-ie')||cbVal('mn-ie');
+    if(v) sbIe.value=v;
+  }
+
+  // House — from checkboxes
+  const sbHouse=document.getElementById('sb-house');
+  if(sbHouse&&!sbHouse._m){
+    if(cbChecked('cb-homepaid')||cbChecked('mn-homepaid')) sbHouse.value='House is paid for';
+    else if(cbChecked('cb-rent')||cbChecked('mn-rent')) sbHouse.value='Client rents';
+    else {
+      const mort=cbVal('cb-mortgage');
+      if(mort) sbHouse.value=mort;
+    }
+  }
+
+  // Time horizon — from checkbox select
+  const sbTh=document.getElementById('sb-th');
+  if(sbTh&&!sbTh._m){
+    const thMap={'Less than 1 year':'Less than 1 year','1-3 years':'1-3 years','3-5 years':'3-5 years','5-10 years':'5-10 years','10+ years':'10+ years'};
+    const v=cbVal('cb-timehorizon')||cbVal('mn-timehorizon');
+    if(v&&thMap[v]){
+      Array.from(sbTh.options).forEach(opt=>{if(opt.text===thMap[v]) sbTh.value=opt.value;});
+    }
+  }
+}
+
+// ── HELPERS ───────────────────────────────────────────────────
 function gv(id){const e=document.getElementById(id);return e?e.value.trim():'';}
-
-
-function renderNote(text){
-  const labels=['Liabilities','Time Horizon','Objectives','Risk Tolerance','Outside Liquid Assets','Income','Emergency Fund','House','Advisory Fee','Internal Expenses'];
-
-  // Find where data block starts — look for any label at the start of a line
-  let splitIdx=-1;
-  const lines=text.split('\n');
-  for(let i=0;i<lines.length;i++){
-    const trimmed=lines[i].trim();
-    for(const lbl of labels){
-      if(trimmed.startsWith(lbl) && (trimmed[lbl.length]===undefined||trimmed[lbl.length]===' '||trimmed[lbl.length]==='	')){
-        // Confirm at least 2 more label lines follow to ensure this is the block not mid-narrative
-        let count=1;
-        for(let j=i+1;j<lines.length&&j<i+5;j++){
-          const t2=lines[j].trim();
-          for(const l2 of labels){if(t2.startsWith(l2)) count++;}
-        }
-        if(count>=2){splitIdx=i;break;}
-      }
-    }
-    if(splitIdx>=0) break;
-  }
-
-  if(splitIdx===-1){
-    return '<div style="white-space:pre-wrap;line-height:1.9">'+escHtml(text)+'</div>';
-  }
-
-  const narrative=lines.slice(0,splitIdx).join('\n').trim();
-  const blockLines=lines.slice(splitIdx);
-
-  // Parse data block lines into label/value pairs
-  const rows=[];
-  blockLines.forEach(line=>{
-    const trimmed=line.trim();
-    if(!trimmed) return;
-    for(const lbl of labels){
-      if(trimmed.startsWith(lbl)){
-        // Value is everything after the label, stripped of leading whitespace
-        const val=trimmed.substring(lbl.length).replace(/^[\s	]+/,'');
-        if(val) rows.push({label:lbl, value:val});
-        return;
-      }
-    }
-  });
-
-  // Build HTML — narrative + justified table
-  let html='<div style="white-space:pre-wrap;line-height:1.9;margin-bottom:1.25rem">'+escHtml(narrative)+'</div>';
-  if(rows.length){
-    html+='<table style="width:100%;border-collapse:collapse;font-family:var(--mono);font-size:12px;line-height:2.1">';
-    rows.forEach(r=>{
-      html+='<tr>';
-      html+='<td style="color:var(--muted);padding-right:6px;white-space:nowrap;vertical-align:middle;font-weight:500">'+escHtml(r.label)+'</td>';
-      html+='<td style="border-bottom:1px dotted #ccc;width:100%;vertical-align:middle"></td>';
-      html+='<td style="padding-left:10px;white-space:nowrap;vertical-align:middle;text-align:right;font-weight:400">'+escHtml(r.value)+'</td>';
-      html+='</tr>';
-    });
-    html+='</table>';
-  }
-  return html;
+function getNTLabel(){
+  for(const a of S.accts){const found=(NT[a]||[]).find(n=>n.v===S.nt);if(found)return found.l;}
+  return 'Note';
+}
+function getRefSource(){
+  const sel=gv('f-ref');
+  if(sel==='Other') return gv('f-ref-other')||'not specified';
+  return sel||'not specified';
 }
 
-function escHtml(str){
-  return str.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
-}
-
-// API key stored securely in browser localStorage
-function getKey(){return localStorage.getItem('jpm_anthropic_key')||'';}
-function saveKey(k){localStorage.setItem('jpm_anthropic_key',k);}
-
-async function generate(){
-  migrateToSB();
-  // Check for API key — use modal if missing
-  const key=getKey();
-  if(!key){
-    openKeyModal();
-    return;
-  }
-  runGenerate();}
-
+// ── MODAL ─────────────────────────────────────────────────────
 function openKeyModal(){
   document.getElementById('key-modal').classList.remove('hidden');
   setTimeout(()=>document.getElementById('modal-key-inp').focus(),100);
 }
-
 function closeKeyModal(){
   document.getElementById('key-modal').classList.add('hidden');
   document.getElementById('modal-key-inp').value='';
   document.getElementById('modal-err').style.display='none';
 }
-
 function submitKeyModal(){
   const val=document.getElementById('modal-key-inp').value.trim();
-  if(!val.startsWith('sk-ant')){
-    document.getElementById('modal-err').style.display='block';
-    return;
-  }
-  saveKey(val);
-  closeKeyModal();
+  if(!val.startsWith('sk-ant')){document.getElementById('modal-err').style.display='block';return;}
+  saveKey(val);closeKeyModal();runGenerate();
+}
+
+// ── GENERATE ──────────────────────────────────────────────────
+async function generate(){
+  migrateToSB();
+  const key=getKey();
+  if(!key){openKeyModal();return;}
   runGenerate();
 }
 
@@ -491,34 +802,49 @@ async function runGenerate(){
   migrateToSB();
   const key=getKey();
   if(!key){openKeyModal();return;}
+
   const btn=document.getElementById('gen-btn'),sp=document.getElementById('gen-spin');
   btn.disabled=true;sp.classList.remove('hidden');
   const pb=document.getElementById('pbar');
   let prog=0;const iv=setInterval(()=>{prog=Math.min(prog+7,85);pb.style.width=prog+'%';},150);
-  const aLabel={brokerage:'Individual/Joint Brokerage',ira:gv('f-iratype')||'IRA',trust:'Trust Account',business:'Business/Entity Account',annuity:'Annuity',managed:'Managed Strategy Account'}[S.acct];
-  const ntLabel=NT[S.acct]?.find(n=>n.v===S.nt)?.l||'Note';
+
+  const acctLabel = S.accts.map(a=>({brokerage:'Individual/Joint Brokerage',ira:gv('f-iratype')||'IRA',trust:'Trust Account',business:'Business/Entity Account',annuity:'Annuity',managed:'Managed Strategy Account'}[a]||a)).join(' + ');
+  const ntLabel=getNTLabel();
+  const clientName=gv('f-name')||'[CLIENT NAME]';
+  const advisor=gv('f-adv')||'Alberto Leyba';
+  const date=gv('f-date')||new Date().toLocaleDateString();
+  const acctPending=document.getElementById('f-acct-pending').checked;
+  const acctNum=acctPending?'Pending — not yet assigned':gv('f-acct')||'N/A';
+  const ref=getRefSource();
+  const location=gv('f-location')||'our office';
+
   let extra='';
-  if(S.acct==='trust')extra='Trust Name: '+gv('f-trust')+'\nTrustee: '+gv('f-trustee')+'\n';
-  if(S.acct==='business')extra='Entity Name: '+gv('f-entity')+'\nAuthorized Signer: '+gv('f-signer')+'\n';
-  if(S.acct==='ira')extra='IRA Type: '+gv('f-iratype')+'\nBeneficiary Status: '+gv('f-bene')+'\n';
-  if(S.acct==='annuity')extra='Annuitant: '+gv('f-annuitant')+'\nBeneficiary: '+gv('f-annu-bene')+'\n';
-  const checked=collectChecked();
-  const sb='Liabilities: '+(gv('sb-liab')||'0.00')+'\nTime Horizon: '+gv('sb-th')+'\nObjectives: '+gv('sb-obj')+'\nRisk Tolerance: '+gv('sb-risk').replace('Growth-oriented',gv('sb-risk'))+'\nIncome: '+(gv('sb-inc')||gv('f-income')||'[not specified]')+'\nEmergency Fund: '+gv('sb-ef')+'\nOutside Liquid Assets: '+gv('sb-ola')+'\nHouse: '+gv('sb-house')+'\nAdvisory Fee: '+gv('sb-fee')+'\nInternal Expenses: '+gv('sb-ie');
+  if(S.accts.includes('trust')) extra+=`Trust Name: ${gv('f-trust')}\nTrustee: ${gv('f-trustee')}\n`;
+  if(S.accts.includes('business')) extra+=`Entity Name: ${gv('f-entity')}\nAuthorized Signer: ${gv('f-signer')}\n`;
+  if(S.accts.includes('ira')) extra+=`IRA Type: ${gv('f-iratype')}\nBeneficiary Status: ${gv('f-bene')}\n`;
+  if(S.accts.includes('annuity')) extra+=`Annuitant: ${gv('f-annuitant')}\nBeneficiary: ${gv('f-annu-bene')}\n`;
+
+  const checkedNotes=collectChecked();
+  const sb=`Liabilities: ${gv('sb-liab')||'0.00'}\nTime Horizon: ${gv('sb-th')}\nObjectives: ${gv('sb-obj')}\nRisk Tolerance: ${gv('sb-risk')}\nIncome: ${gv('sb-inc')}\nEmergency Fund: ${gv('sb-ef')}\nOutside Liquid Assets: ${gv('sb-ola')}\nHouse: ${gv('sb-house')}\nAdvisory Fee: ${gv('sb-fee')}\nInternal Expenses: ${gv('sb-ie')}`;
+
   const sys=`You are a compliance-aware wealth management note writer for J.P. Morgan Securities LLC. You write internal client notes EXACTLY in the style of advisor Alberto Leyba (FINRA Rules 3270/3280).
 
 ALBERTO LEYBA'S EXACT WRITING STYLE:
-1. ALWAYS start with: "[CLIENT NAME], age [age if known], was referred by [EXACT referral source as given]. We met for an [in-person/Zoom/phone/video] meeting at [meeting location]." — Use the EXACT referral source and location provided. If referral source is blank write 'a colleague'. NEVER say 'their own initiative'.
-2. Introduce client — weave personal/professional background naturally (age, profession, family, life situation).
-3. State client's primary concern or goal plainly.
-4. Flow: financial situation → outside assets → income → liabilities → emergency fund → real estate → concepts discussed → products selected.
-5. When mutual funds/ETFs discussed but NOT implemented, say so explicitly.
-6. Name products specifically: full product names, exact allocations, rates, terms, surrender periods.
-7. State fees explicitly — exact % or bps — described as "discussed."
-8. For annuities: note Buyer's Guide and prospectus provided; surrender penalties/limited principal access explained; account type (direct annuity funding vs. advisory/managed); annuitant and beneficiary.
-9. Include DocuSign for account opening, money movement for funding, 45-day follow-up.
-10. End EVERY note with this EXACT paragraph verbatim — do not change a single word:
+1. ALWAYS start: "[Client name] was referred by [EXACT referral name]. We met for an [in-person/Zoom/phone] meeting at [meeting location]." NEVER say "their own initiative." Always name the specific referral person and location.
+2. Weave client personal/professional background naturally — profession, age, family, life situation.
+3. State client's primary concern plainly.
+4. Flow: financial situation → outside assets → income → liabilities → emergency fund → real estate → concepts discussed → products selected → fees → account opening → follow-up.
+5. When mutual funds/ETFs discussed but NOT implemented, explicitly state: "mutual funds were reviewed in an educational context, and no mutual fund recommendation was implemented (therefore, A vs. C share discussion and the 1% CDTC disclosure for A shares sold within the first 12 months were not applicable to the final decision)."
+6. When mutual funds ARE implemented, include: "Discussed A vs C shares. Disclosed the 1% CDTC fee for A shares if sold within the first 12 months. Ran the FINRA Fund Analyzer tool and compared different funds to choose the one that better fits the client's interests."
+7. Name products specifically: full product names, exact allocations, rates, terms, surrender periods.
+8. State fees explicitly — exact % or bps — described as "discussed."
+9. For annuities: note Buyer's Guide and prospectus provided; surrender penalties/limited liquidity explained; account type (direct funding vs advisory/managed); annuitant and beneficiary.
+10. Note DocuSign for account opening, money movement for funding, 45-day follow-up.
+11. If account number is pending, note this naturally in the opening.
+12. If multiple account types (e.g. managed + annuity), cover all in one cohesive narrative.
+13. End EVERY note with this EXACT paragraph verbatim — no changes:
 "Reminded client that investments are not FDIC insured, that they fluctuate in value sometimes to loss of principal and that they are not guaranteed by Chase or another banking institution. Explained to the client that past performance is not a guarantee of future returns. As part of the onboarding process booked a follow up appointment in 45 days to discuss 1st statement and answer any questions that the client might have."
-11. After the narrative, blank line, then structured data block with EXACT alignment:
+14. After narrative, one blank line, then structured data block EXACTLY:
 
 Liabilities                           [value]
 Time Horizon                    [value]
@@ -531,63 +857,150 @@ House                                [value]
 Advisory Fee                     [value]
 Internal Expenses            [value]
 
-12. Professional but human tone. First-person. Flowing narrative prose — NO bullet points. One or two cohesive paragraphs.`;
-  const prompt='Write a "'+ntLabel+'" note for a '+aLabel+' account.\nCLIENT: '+(gv('f-name')||'[CLIENT NAME]')+'\nACCOUNT: '+(gv('f-acct')||'N/A')+'\nDATE: '+(gv('f-date')||new Date().toLocaleDateString())+'\nADVISOR: '+(gv('f-adv')||'Alberto Leyba')+'\nREFERRAL SOURCE: '+(gv('f-ref')||'not specified')+'\nHOW THEY MET: '+S.meet+'\nMEETING LOCATION: '+(gv('f-location')||'our office')+'\nCLIENT INCOME: '+(gv('f-income')||gv('sb-inc')||'[not specified]')+'\n'+extra+'\nITEMS TO WEAVE INTO NOTE:\n'+(checked||'Standard professional note.')+'\nSTRUCTURED DATA BLOCK:\n'+sb+'\nBegin directly with narrative. No title or header. End with exact FDIC/45-day paragraph. Then structured data block.';
+15. Tone: professional but human. First-person. Flowing narrative prose — NO bullet points. One or two cohesive paragraphs.`;
+
+  const prompt=`Write a "${ntLabel}" note for a ${acctLabel} account.
+CLIENT: ${clientName}
+ACCOUNT: ${acctNum}
+DATE: ${date}
+ADVISOR: ${advisor}
+REFERRAL SOURCE: ${ref}
+HOW THEY MET: ${S.meet}
+MEETING LOCATION: ${location}
+${extra}
+ITEMS TO INCLUDE:
+${checkedNotes||'Standard professional note.'}
+STRUCTURED DATA BLOCK:
+${sb}
+Begin directly with narrative. No title. End with exact FDIC/45-day paragraph. Then structured data block.`;
+
   go(3);
+
   try{
-    const resp=await fetch('/.netlify/functions/proxy',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({model:'claude-sonnet-4-5-20251001',max_tokens:1800,system:sys,messages:[{role:'user',content:prompt}]})});
+    const resp=await fetch('/.netlify/functions/proxy',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({model:'claude-opus-4-5',max_tokens:2000,system:sys,messages:[{role:'user',content:prompt}]})});
     const data=await resp.json();
     clearInterval(iv);pb.style.width='100%';
-    document.getElementById('note-out').textContent=data.content?.filter(b=>b.type==='text').map(b=>b.text).join('')||'Error: '+(data.error?.message||'Unknown');
-  }catch(e){clearInterval(iv);document.getElementById('note-out').textContent='Connection error: '+e.message;}
+    const text=data.content?.filter(b=>b.type==='text').map(b=>b.text).join('')||'Error: '+(data.error?.message||'Unknown');
+    document.getElementById('note-out').innerHTML=renderNote(text);
+  }catch(e){
+    clearInterval(iv);
+    document.getElementById('note-out').textContent='Connection error: '+e.message;
+  }
+
   btn.disabled=false;sp.classList.add('hidden');
   document.getElementById('out-title').textContent=ntLabel;
-  const aTag={brokerage:'Brokerage',ira:'IRA/Roth',trust:'Trust',business:'Business/Entity',annuity:'Annuity',managed:'Managed Strategy'}[S.acct];
-  document.getElementById('out-tags').innerHTML='<span class="tag hi">'+aTag+'</span><span class="tag hi">'+ntLabel+'</span><span class="tag">LIM Suite Ready</span><span class="tag">Alberto Leyba</span>';
+  const acctTags=S.accts.map(a=>({brokerage:'Brokerage',ira:'IRA/Roth',trust:'Trust',business:'Business/Entity',annuity:'Annuity',managed:'Managed Strategy'}[a]||a));
+  document.getElementById('out-tags').innerHTML=acctTags.map(t=>`<span class="tag hi">${t}</span>`).join('')+`<span class="tag hi">${ntLabel}</span><span class="tag">Alberto Leyba</span>`;
 }
 
+// ── RENDER NOTE (justified data block) ────────────────────────
+function renderNote(text){
+  const labels=['Liabilities','Time Horizon','Objectives','Risk Tolerance','Outside Liquid Assets','Income','Emergency Fund','House','Advisory Fee','Internal Expenses'];
+  const lines=text.split('\n');
+  let splitIdx=-1;
+  for(let i=0;i<lines.length;i++){
+    const trimmed=lines[i].trim();
+    for(const lbl of labels){
+      if(trimmed.startsWith(lbl)&&(trimmed.length===lbl.length||trimmed[lbl.length]===' '||trimmed[lbl.length]==='\t')){
+        let count=1;
+        for(let j=i+1;j<lines.length&&j<i+5;j++){const t2=lines[j].trim();for(const l2 of labels){if(t2.startsWith(l2))count++;}}
+        if(count>=2){splitIdx=i;break;}
+      }
+    }
+    if(splitIdx>=0) break;
+  }
+  if(splitIdx===-1) return '<div style="white-space:pre-wrap;line-height:1.9">'+escHtml(text)+'</div>';
+  const narrative=lines.slice(0,splitIdx).join('\n').trim();
+  const blockLines=lines.slice(splitIdx);
+  const rows=[];
+  blockLines.forEach(line=>{
+    const trimmed=line.trim();if(!trimmed)return;
+    for(const lbl of labels){
+      if(trimmed.startsWith(lbl)){
+        const val=trimmed.substring(lbl.length).replace(/^[\s\t]+/,'');
+        if(val)rows.push({label:lbl,value:val});return;
+      }
+    }
+  });
+  let html='<div style="white-space:pre-wrap;line-height:1.9;margin-bottom:1.25rem">'+escHtml(narrative)+'</div>';
+  if(rows.length){
+    html+='<table style="width:100%;border-collapse:collapse;font-family:var(--mono);font-size:12px;line-height:2.1">';
+    rows.forEach(r=>{
+      html+='<tr>';
+      html+=`<td style="color:var(--muted);padding-right:6px;white-space:nowrap;vertical-align:middle;font-weight:500">${escHtml(r.label)}</td>`;
+      html+=`<td style="border-bottom:1px dotted #ccc;width:100%;vertical-align:middle"></td>`;
+      html+=`<td style="padding-left:10px;white-space:nowrap;vertical-align:middle;text-align:right">${escHtml(r.value)}</td>`;
+      html+='</tr>';
+    });
+    html+='</table>';
+  }
+  return html;
+}
+function escHtml(str){return str.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');}
+
+// ── NAVIGATION ────────────────────────────────────────────────
 function go(n){
   for(let i=0;i<4;i++){
-    document.getElementById('p'+i).classList.toggle('hidden',i!==n);
-    const d=document.getElementById('d'+i);d.classList.remove('active','done');
-    if(i<n)d.classList.add('done');else if(i===n)d.classList.add('active');
+    document.getElementById(`p${i}`).classList.toggle('hidden',i!==n);
+    const d=document.getElementById(`d${i}`);
+    d.classList.remove('active','done');
+    if(i<n)d.classList.add('done');
+    else if(i===n)d.classList.add('active');
   }
   if(n===1){renderExtraFields();if(!gv('f-date'))document.getElementById('f-date').valueAsDate=new Date();}
-  if(n===2){renderCBFields();setTimeout(migrateToSB,100);}
+  if(n===2){renderCBFields();setTimeout(migrateToSB,150);}
 }
 
+// ── COPY NOTE ─────────────────────────────────────────────────
 function copyNote(){
-  navigator.clipboard.writeText(document.getElementById('note-out').innerText).then(()=>{
-    const b=document.querySelector('.cpbtn');b.textContent='Copied!';setTimeout(()=>b.textContent='Copy for LIM Suite',2000);
+  const el=document.getElementById('note-out');
+  const text=el.innerText||el.textContent;
+  navigator.clipboard.writeText(text).then(()=>{
+    const btn=document.getElementById('copy-btn');
+    btn.textContent='Copied!';btn.classList.add('copied');
+    setTimeout(()=>{btn.textContent='Copy Note';btn.classList.remove('copied');},2500);
+  }).catch(()=>{
+    // Fallback for older browsers
+    const ta=document.createElement('textarea');
+    ta.value=el.innerText;document.body.appendChild(ta);ta.select();
+    document.execCommand('copy');document.body.removeChild(ta);
+    const btn=document.getElementById('copy-btn');
+    btn.textContent='Copied!';setTimeout(()=>btn.textContent='Copy Note',2500);
   });
 }
 
 function dlNote(){
-  const text=document.getElementById('note-out').textContent;
-  const ntLabel=NT[S.acct]?.find(n=>n.v===S.nt)?.l||'Note';
+  const text=document.getElementById('note-out').innerText||document.getElementById('note-out').textContent;
+  const ntLabel=getNTLabel();
   const blob=new Blob([text],{type:'text/plain'});
-  const a=document.createElement('a');a.href=URL.createObjectURL(blob);
-  a.download='JPM_'+ntLabel.replace(/\s+/g,'_')+'_'+new Date().toISOString().slice(0,10)+'.txt';a.click();
+  const a=document.createElement('a');
+  a.href=URL.createObjectURL(blob);
+  a.download=`JPM_${ntLabel.replace(/\s+/g,'_')}_${new Date().toISOString().slice(0,10)}.txt`;
+  a.click();
 }
 
 function reset(){
-  S={acct:null,nt:null,meet:'in-person meeting'};
+  S={accts:[],nt:null,meet:'in-person meeting'};
   document.getElementById('acct-chips').querySelectorAll('.chip').forEach(c=>c.classList.remove('on'));
-  const nc=document.getElementById('nt-card');nc.style.opacity='.4';nc.style.pointerEvents='none';
+  document.getElementById('nt-card').style.opacity='.4';
+  document.getElementById('nt-card').style.pointerEvents='none';
   document.getElementById('nt-chips').innerHTML='';
   document.getElementById('btn0').disabled=true;
   document.getElementById('pbar').style.width='0%';
-  const si=document.getElementById('sb-inc');if(si)si._m=false;
+  document.getElementById('acct-note').style.display='none';
+  document.getElementById('f-acct-pending').checked=false;
+  document.getElementById('f-ref').value='';
+  document.getElementById('f-ref-other').style.display='none';
+  ['sb-inc','sb-ola','sb-fee','sb-ie','sb-house'].forEach(id=>{const e=document.getElementById(id);if(e)e._m=false;});
   go(0);
 }
 
-document.getElementById('sb-inc').addEventListener('input',function(){this._m=true;});
-document.getElementById('sb-ola').addEventListener('input',function(){this._m=true;});
-document.getElementById('sb-fee').addEventListener('input',function(){this._m=true;});
-document.getElementById('sb-ie').addEventListener('input',function(){this._m=true;});
-document.getElementById('sb-house').addEventListener('input',function(){this._m=true;});
+// Mark SB fields as manually edited
+['sb-inc','sb-ola','sb-fee','sb-ie','sb-house'].forEach(id=>{
+  const el=document.getElementById(id);
+  if(el) el.addEventListener('input',function(){this._m=true;});
+});
 document.getElementById('sb-th').addEventListener('change',function(){this._m=true;});
-document.getElementById('sb-house').addEventListener('change',function(){this._m=true;});
 </script>
 
 
