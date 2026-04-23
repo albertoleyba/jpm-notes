@@ -1,7 +1,7 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
+<!-- saved from url=(0045)file:///C:/Users/alber/Downloads/index_5.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>JPM Notes Assistant — Alberto Leyba</title>
 <style>
@@ -117,10 +117,10 @@ hr.div{border:none;border-top:1px solid var(--border);margin:1rem 0}
 <div class="hdr">
   <div class="hdr-logo">
     <svg viewBox="0 0 24 24" fill="none">
-      <rect x="3" y="3" width="8" height="8" rx="1.5" fill="#C89B2A"/>
-      <rect x="13" y="3" width="8" height="8" rx="1.5" fill="rgba(255,255,255,.35)"/>
-      <rect x="3" y="13" width="8" height="8" rx="1.5" fill="rgba(255,255,255,.35)"/>
-      <rect x="13" y="13" width="8" height="8" rx="1.5" fill="rgba(255,255,255,.35)"/>
+      <rect x="3" y="3" width="8" height="8" rx="1.5" fill="#C89B2A"></rect>
+      <rect x="13" y="3" width="8" height="8" rx="1.5" fill="rgba(255,255,255,.35)"></rect>
+      <rect x="3" y="13" width="8" height="8" rx="1.5" fill="rgba(255,255,255,.35)"></rect>
+      <rect x="13" y="13" width="8" height="8" rx="1.5" fill="rgba(255,255,255,.35)"></rect>
     </svg>
   </div>
   <div>
@@ -158,14 +158,14 @@ hr.div{border:none;border-top:1px solid var(--border);margin:1rem 0}
     <div class="chips" id="nt-chips"></div>
   </div>
   <div class="btn-row">
-    <button class="btn btn-primary" id="btn0" disabled onclick="go(1)">Continue →</button>
+    <button class="btn btn-primary" id="btn0" disabled="" onclick="go(1)">Continue →</button>
   </div>
 </div>
 
 <!-- PANE 1: Client Info -->
 <div id="p1" class="pane hidden">
   <div class="card">
-    <div class="ctitle">Client & Meeting Info</div>
+    <div class="ctitle">Client &amp; Meeting Info</div>
     <div class="r2">
       <div class="fg"><label class="fl">Client Name <span class="req">*</span></label><input type="text" id="f-name" placeholder="Last, First M."></div>
       <div class="fg">
@@ -244,7 +244,7 @@ hr.div{border:none;border-top:1px solid var(--border);margin:1rem 0}
       </div>
       <div class="fg"><label class="fl">Objectives</label>
         <select id="sb-obj">
-          <option>Income</option><option>Moderate</option><option>Growth</option><option>Growth & Income</option><option>Capital Preservation</option><option>Aggressive Growth</option>
+          <option>Income</option><option>Moderate</option><option>Growth</option><option>Growth &amp; Income</option><option>Capital Preservation</option><option>Aggressive Growth</option>
         </select>
       </div>
       <div class="fg"><label class="fl">Risk Tolerance</label>
@@ -302,7 +302,7 @@ hr.div{border:none;border-top:1px solid var(--border);margin:1rem 0}
     <div class="modal-err" id="modal-err">Please enter a valid API key (starts with sk-ant-)</div>
     <div class="modal-btns">
       <button class="btn btn-secondary" onclick="closeKeyModal()">Cancel</button>
-      <button class="btn btn-primary" onclick="submitKeyModal()">Save & Generate</button>
+      <button class="btn btn-primary" onclick="submitKeyModal()">Save &amp; Generate</button>
     </div>
   </div>
 </div>
@@ -587,8 +587,19 @@ const CB = {
 let S = {accts:[], nt:null, meet:'in-person meeting'};
 
 // ── API KEY ───────────────────────────────────────────────────
-function getKey(){return localStorage.getItem('jpm_anthropic_key')||'';}
-function saveKey(k){localStorage.setItem('jpm_anthropic_key',k);}
+// Use multiple storage methods for Safari compatibility
+let _cachedKey = '';
+function getKey(){
+  if(_cachedKey) return _cachedKey;
+  try { _cachedKey = localStorage.getItem('jpm_anthropic_key')||''; } catch(e){}
+  if(!_cachedKey){ try { _cachedKey = sessionStorage.getItem('jpm_anthropic_key')||''; } catch(e){} }
+  return _cachedKey;
+}
+function saveKey(k){
+  _cachedKey = k;
+  try { localStorage.setItem('jpm_anthropic_key',k); } catch(e){}
+  try { sessionStorage.setItem('jpm_anthropic_key',k); } catch(e){}
+}
 
 // ── ACCOUNT CHIPS (multi-select) ──────────────────────────────
 document.getElementById('acct-chips').querySelectorAll('.chip').forEach(el=>{
@@ -1064,5 +1075,6 @@ function reset(){
 });
 document.getElementById('sb-th').addEventListener('change',function(){this._m=true;});
 </script>
-</body>
-</html>
+
+
+</body></html>
