@@ -1,7 +1,7 @@
 <!DOCTYPE html>
-<!-- saved from url=(0045)file:///C:/Users/alber/Downloads/index_4.html -->
-<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-
+<html lang="en">
+<head>
+<meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>JPM Notes Assistant — Alberto Leyba</title>
 <style>
@@ -117,10 +117,10 @@ hr.div{border:none;border-top:1px solid var(--border);margin:1rem 0}
 <div class="hdr">
   <div class="hdr-logo">
     <svg viewBox="0 0 24 24" fill="none">
-      <rect x="3" y="3" width="8" height="8" rx="1.5" fill="#C89B2A"></rect>
-      <rect x="13" y="3" width="8" height="8" rx="1.5" fill="rgba(255,255,255,.35)"></rect>
-      <rect x="3" y="13" width="8" height="8" rx="1.5" fill="rgba(255,255,255,.35)"></rect>
-      <rect x="13" y="13" width="8" height="8" rx="1.5" fill="rgba(255,255,255,.35)"></rect>
+      <rect x="3" y="3" width="8" height="8" rx="1.5" fill="#C89B2A"/>
+      <rect x="13" y="3" width="8" height="8" rx="1.5" fill="rgba(255,255,255,.35)"/>
+      <rect x="3" y="13" width="8" height="8" rx="1.5" fill="rgba(255,255,255,.35)"/>
+      <rect x="13" y="13" width="8" height="8" rx="1.5" fill="rgba(255,255,255,.35)"/>
     </svg>
   </div>
   <div>
@@ -158,14 +158,14 @@ hr.div{border:none;border-top:1px solid var(--border);margin:1rem 0}
     <div class="chips" id="nt-chips"></div>
   </div>
   <div class="btn-row">
-    <button class="btn btn-primary" id="btn0" disabled="" onclick="go(1)">Continue →</button>
+    <button class="btn btn-primary" id="btn0" disabled onclick="go(1)">Continue →</button>
   </div>
 </div>
 
 <!-- PANE 1: Client Info -->
 <div id="p1" class="pane hidden">
   <div class="card">
-    <div class="ctitle">Client &amp; Meeting Info</div>
+    <div class="ctitle">Client & Meeting Info</div>
     <div class="r2">
       <div class="fg"><label class="fl">Client Name <span class="req">*</span></label><input type="text" id="f-name" placeholder="Last, First M."></div>
       <div class="fg">
@@ -244,7 +244,7 @@ hr.div{border:none;border-top:1px solid var(--border);margin:1rem 0}
       </div>
       <div class="fg"><label class="fl">Objectives</label>
         <select id="sb-obj">
-          <option>Income</option><option>Moderate</option><option>Growth</option><option>Growth &amp; Income</option><option>Capital Preservation</option><option>Aggressive Growth</option>
+          <option>Income</option><option>Moderate</option><option>Growth</option><option>Growth & Income</option><option>Capital Preservation</option><option>Aggressive Growth</option>
         </select>
       </div>
       <div class="fg"><label class="fl">Risk Tolerance</label>
@@ -302,7 +302,7 @@ hr.div{border:none;border-top:1px solid var(--border);margin:1rem 0}
     <div class="modal-err" id="modal-err">Please enter a valid API key (starts with sk-ant-)</div>
     <div class="modal-btns">
       <button class="btn btn-secondary" onclick="closeKeyModal()">Cancel</button>
-      <button class="btn btn-primary" onclick="submitKeyModal()">Save &amp; Generate</button>
+      <button class="btn btn-primary" onclick="submitKeyModal()">Save & Generate</button>
     </div>
   </div>
 </div>
@@ -312,12 +312,12 @@ hr.div{border:none;border-top:1px solid var(--border);margin:1rem 0}
 <script>
 // ── NOTE TYPE MAP ─────────────────────────────────────────────
 const NT = {
-  brokerage:[{v:'contact',l:'Client Contact / Onboarding'},{v:'trade',l:'Investment Rationale / Trade'},{v:'plan',l:'Financial Plan Review'},{v:'suitability',l:'Suitability / KYC Update'}],
-  ira:[{v:'contact',l:'Client Contact / Onboarding'},{v:'trade',l:'Investment Rationale / Trade'},{v:'plan',l:'Financial Plan Review'},{v:'suitability',l:'Suitability / KYC Update'},{v:'distribution',l:'Distribution / RMD Note'}],
-  trust:[{v:'contact',l:'Client Contact / Onboarding'},{v:'trade',l:'Investment Rationale / Trade'},{v:'suitability',l:'Suitability / Trust Governance'}],
-  business:[{v:'contact',l:'Client Contact / Onboarding'},{v:'trade',l:'Investment Rationale / Trade'},{v:'suitability',l:'Suitability / Entity KYC'}],
-  annuity:[{v:'contact',l:'Client Contact / Onboarding'},{v:'annuity_sale',l:'Annuity Sale / Exchange'},{v:'suitability',l:'Suitability Review'},{v:'plan',l:'Financial Plan Review'}],
-  managed:[{v:'contact',l:'Client Contact / Onboarding'},{v:'managed_new',l:'New Managed Strategy Note'},{v:'plan',l:'Financial Plan Review'},{v:'trade',l:'Rebalance / Trade Note'},{v:'suitability',l:'Suitability / KYC Update'}],
+  brokerage:[{v:'contact',l:'Client Contact / Onboarding'},{v:'discovery',l:'Discovery Note'},{v:'followup',l:'Follow-Up / New Product Addition'},{v:'trade',l:'Investment Rationale / Trade'},{v:'plan',l:'Financial Plan Review'},{v:'suitability',l:'Suitability / KYC Update'}],
+  ira:[{v:'contact',l:'Client Contact / Onboarding'},{v:'discovery',l:'Discovery Note'},{v:'followup',l:'Follow-Up / New Product Addition'},{v:'trade',l:'Investment Rationale / Trade'},{v:'plan',l:'Financial Plan Review'},{v:'suitability',l:'Suitability / KYC Update'},{v:'distribution',l:'Distribution / RMD Note'}],
+  trust:[{v:'contact',l:'Client Contact / Onboarding'},{v:'discovery',l:'Discovery Note'},{v:'followup',l:'Follow-Up / New Product Addition'},{v:'trade',l:'Investment Rationale / Trade'},{v:'suitability',l:'Suitability / Trust Governance'}],
+  business:[{v:'contact',l:'Client Contact / Onboarding'},{v:'discovery',l:'Discovery Note'},{v:'followup',l:'Follow-Up / New Product Addition'},{v:'trade',l:'Investment Rationale / Trade'},{v:'suitability',l:'Suitability / Entity KYC'}],
+  annuity:[{v:'contact',l:'Client Contact / Onboarding'},{v:'discovery',l:'Discovery Note'},{v:'followup',l:'Follow-Up / New Product Addition'},{v:'annuity_sale',l:'Annuity Sale / Exchange'},{v:'suitability',l:'Suitability Review'},{v:'plan',l:'Financial Plan Review'}],
+  managed:[{v:'contact',l:'Client Contact / Onboarding'},{v:'discovery',l:'Discovery Note'},{v:'followup',l:'Follow-Up / New Product Addition'},{v:'managed_new',l:'New Managed Strategy Note'},{v:'plan',l:'Financial Plan Review'},{v:'trade',l:'Rebalance / Trade Note'},{v:'suitability',l:'Suitability / KYC Update'}],
 };
 
 // ── CHECKBOX DEFINITIONS ──────────────────────────────────────
@@ -365,9 +365,9 @@ const CB = {
     {id:'cb-products',label:'Products / strategies selected',type:'multi',ph:'e.g. 150k Large Cap Leaders, 150k CWMPD, 150k Symetra Edge Revolution FIA.',note:'Investment solutions selected: {val}.',chk:true},
     {id:'cb-jpmcap',label:'JPMCAP strategy selected',type:'select',opts:['JPMCAP Conservative','JPMCAP Balanced','JPMCAP Growth','JPMCAP Aggressive'],note:'Selected the {val} actively managed portfolio. Client wants preservation of capital and the actively managed feature.',chk:false},
     {id:'cb-dmas',label:'DMAS portfolio strategy',type:'check',note:'Discussed and selected the DMAS (Discretionary Managed Account Strategy) portfolio.',chk:false},
-    {id:'cb-mf-selected',label:'Mutual Funds selected — A vs C share disclosure',type:'multi',ph:'e.g. JPM Focus Dividend Growth Fund, Balanced MF/ETF portfolio',note:'Selected mutual fund(s): {val}. Discussed A vs C shares. Disclosed the 1% CDTC fee for A shares if sold within the first 12 months. Ran the FINRA Fund Analyzer tool and compared different funds to choose the one that better fits the client\'s interests.',chk:false},
+    {id:'cb-mf-selected',label:'Mutual Funds selected — A vs C share disclosure',type:'multi',ph:'e.g. JPM Focus Dividend Growth Fund, Balanced MF/ETF portfolio',note:"Selected mutual fund(s): {val}. Discussed A vs C shares. Disclosed the 1% CDTC fee for A shares if sold within the first 12 months. Ran the FINRA Fund Analyzer tool and compared different funds to choose the one that better fits the client's interests.",chk:false},
     {id:'cb-fees',label:'Advisory fee discussed',type:'text',ph:'e.g. 1.45% for LCL portfolio',note:'Discussed advisory fee of {val}.',chk:true},
-    {id:'cb-fee-exception',label:'Fee exception / manager\'s exception',type:'text',ph:'e.g. Agreed on 10% discount; fee set at 1.0%',note:'A manager\'s exception was requested and approved: {val}.',chk:false},
+    {id:'cb-fee-exception',label:'Fee exception / manager\'s exception',type:'text',ph:'e.g. Agreed on 10% discount; fee set at 1.0%',note:"A manager's exception was requested and approved: {val}.",chk:false},
     {id:'cb-ie',label:'Internal expenses discussed',type:'text',ph:'e.g. 35bps / embedded in strategy',note:'Internal expenses of {val} were disclosed and discussed.',chk:true},
     {id:'cb-norestrict',label:'No portfolio restrictions confirmed',type:'check',note:'Verified there are no portfolio restrictions.',chk:false},
     {sec:'Account Actions'},
@@ -403,7 +403,7 @@ const CB = {
     {id:'tr-tax',label:'Tax consequences discussed',type:'check',note:'Explained the tax consequences of changing investment products and client agreed.',chk:false},
     {sec:'Fees & Compliance'},
     {id:'tr-fees',label:'Fees / internal expenses disclosed',type:'text',ph:'e.g. 1.45%, internal expense ratio discussed',note:'Fees and internal expenses disclosed: {val}.',chk:true},
-    {id:'tr-mf',label:'Mutual Funds selected — A vs C share disclosure',type:'multi',ph:'Fund name(s)',note:'Selected mutual fund(s): {val}. Discussed A vs C shares. Disclosed the 1% CDTC fee for A shares if sold within the first 12 months. Ran the FINRA Fund Analyzer tool and compared different funds to choose the one that better fits the client\'s interests.',chk:false},
+    {id:'tr-mf',label:'Mutual Funds selected — A vs C share disclosure',type:'multi',ph:'Fund name(s)',note:"Selected mutual fund(s): {val}. Discussed A vs C shares. Disclosed the 1% CDTC fee for A shares if sold within the first 12 months. Ran the FINRA Fund Analyzer tool and compared different funds to choose the one that better fits the client's interests.",chk:false},
     {id:'tr-regbi',label:'Reg BI best interest documented',type:'check',note:"Reg BI best interest obligation documented. This recommendation is in the client's best interest based on their investment profile and objectives.",chk:true},
     {id:'tr-rsnip',label:'Explained RSNIP',type:'check',note:'Explained RSNIP (Retirement Security Needs Income Planning).',chk:false},
   ],
@@ -467,7 +467,7 @@ const CB = {
     {sec:'Compliance & Documents'},
     {id:'an-buyersguide',label:"Buyer's Guide & prospectus provided",type:'check',note:"The Buyer's Guide and prospectus were provided to the client for review.",chk:true},
     {id:'an-simon',label:'Simon illustration reviewed',type:'check',note:'Reviewed Simon illustration with client.',chk:false},
-    {id:'an-regbi',label:'Reg BI / Form CRS disclosure provided',type:'check',note:"Reg BI best interest obligation documented. Form CRS provided. This recommendation is in the client's best interest — compensation and conflicts of interest have been disclosed.",chk:true},
+    {id:'an-regbi',label:'Reg BI / Form CRS disclosure provided',type:'check',note:"Reg BI best interest obligation documented. Form CRS provided. This recommendation is in the client\'s best interest — compensation and conflicts of interest have been disclosed.",chk:true},
     {id:'an-replace',label:'Replacement form completed',type:'check',note:'Replacement form completed and retained on file.',chk:false},
     {id:'an-rationale',label:'Suitability rationale',type:'multi',ph:"Why is this annuity in the client's best interest?",note:'Suitability rationale: {val}.',chk:true},
     {id:'an-rsnip',label:'Explained RSNIP',type:'check',note:'Explained RSNIP (Retirement Security Needs Income Planning).',chk:false},
@@ -498,7 +498,7 @@ const CB = {
     {id:'mn-mkteduc',label:'Explained market volatility & principal risk',type:'check',note:'I took the time to explain and educate the client on how markets work, its volatility, loss of principal risk and how inflation affects their money.',chk:true},
     {id:'mn-timehorizon',label:'Time horizon discussed',type:'select',opts:['Less than 1 year','1-3 years','3-5 years','5-10 years','10+ years'],note:'Discussed time horizon, which at this point is {val}.',chk:true},
     {id:'mn-mfeduc',label:'Mutual funds / ETFs reviewed educationally — not implemented',type:'check',note:'Mutual funds and ETFs were reviewed in an educational context; no mutual fund recommendation was implemented.',chk:false},
-    {id:'mn-mf-selected',label:'Mutual Funds selected — A vs C share disclosure',type:'multi',ph:'Fund name(s)',note:'Selected mutual fund(s): {val}. Discussed A vs C shares. Disclosed the 1% CDTC fee for A shares if sold within the first 12 months. Ran the FINRA Fund Analyzer tool and compared different funds to choose the one that better fits the client\'s interests.',chk:false},
+    {id:'mn-mf-selected',label:'Mutual Funds selected — A vs C share disclosure',type:'multi',ph:'Fund name(s)',note:"Selected mutual fund(s): {val}. Discussed A vs C shares. Disclosed the 1% CDTC fee for A shares if sold within the first 12 months. Ran the FINRA Fund Analyzer tool and compared different funds to choose the one that better fits the client's interests.",chk:false},
     {id:'mn-bondeduc',label:'Explained YTW & bond/rate relationship',type:'check',note:'Explained yield to worst concept and how bonds work in a teeter-totter effect with interest rates. Explained how a rate move by the Fed could affect the short-term outlook and portfolio duration.',chk:false},
     {id:'mn-structured',label:'Discussed structured notes / bond laddering',type:'check',note:'Discussed structured notes and bond laddering strategies as potential options.',chk:false},
     {id:'mn-consolidation',label:'Discussed consolidation of outside assets',type:'check',note:'Discussed consolidating assets from outside firm(s) into JPMorganChase.',chk:false},
@@ -507,7 +507,7 @@ const CB = {
     {id:'mn-rsnip',label:'Explained RSNIP',type:'check',note:'Explained RSNIP (Retirement Security Needs Income Planning).',chk:false},
     {sec:'Fees & Compliance'},
     {id:'mn-fee',label:'Advisory fee disclosed',type:'text',ph:'e.g. 1.45% for managed portfolio',note:'Discussed advisory fee of {val}.',chk:true},
-    {id:'mn-fee-exception',label:'Fee exception / manager\'s exception',type:'text',ph:'e.g. Agreed on 1.0% (10% discount)',note:'A manager\'s exception was requested and approved: {val}.',chk:false},
+    {id:'mn-fee-exception',label:'Fee exception / manager\'s exception',type:'text',ph:'e.g. Agreed on 1.0% (10% discount)',note:"A manager's exception was requested and approved: {val}.",chk:false},
     {id:'mn-ie',label:'Internal expenses / expense ratio disclosed',type:'text',ph:'e.g. 35bps blended / discussed',note:'Internal expenses of {val} disclosed and discussed.',chk:true},
     {id:'mn-regbi',label:'Reg BI best interest documented',type:'check',note:"Reg BI best interest obligation documented. This recommendation is in the client's best interest based on their investment profile, objectives, and financial situation.",chk:true},
     {id:'mn-suitable',label:'Suitability confirmed — objective & risk tolerance aligned',type:'check',note:'Investment objective and risk tolerance are aligned with the selected managed strategy.',chk:true},
@@ -519,6 +519,68 @@ const CB = {
     {id:'mn-followup45',label:'45-day follow-up appointment booked',type:'check',note:'As part of the onboarding process booked a follow up appointment in 45 days to discuss 1st statement and answer any questions that the client might have.',chk:true},
     {id:'mn-addl',label:'Additional notes',type:'multi',ph:'Any other relevant details.',note:'Additional: {val}.',chk:false},
   ],
+
+  discovery:[
+    {sec:'Meeting Details'},
+    {id:'dc-bg',label:'Client background (profession, age, family)',type:'multi',ph:'e.g. Client is a 45yo engineer, married with two children, recently sold a business...',note:'Client background: {val}',chk:false},
+    {id:'dc-couple',label:'Joint meeting — clients came as a couple',type:'check',note:'Clients came together for the appointment.',chk:false},
+    {id:'dc-walkin',label:'Client came in unannounced / walk-in',type:'check',note:'Client came into the office unannounced.',chk:false},
+    {id:'dc-returning',label:'Returning / previously known client',type:'check',note:'Client is a returning client who previously worked with advisor at prior firm.',chk:false},
+    {id:'dc-concern',label:"Client's primary concern / goal",type:'multi',ph:"e.g. Retirement planning, growing idle cash, protecting against inflation",note:"Client's primary concern: {val}",chk:true},
+    {sec:'Financial Profile'},
+    {id:'dc-income',label:'Income amount',type:'text',ph:'e.g. $120,000 annually',note:'Client reported annual income of approximately {val}.',chk:true},
+    {id:'dc-noliab',label:'No major liabilities',type:'check',note:'Client reported no major liabilities.',chk:true},
+    {id:'dc-liab',label:'Liabilities — describe',type:'multi',ph:'e.g. Mortgage of 290k, car loan of 20k',note:'Liabilities: {val}.',chk:false},
+    {id:'dc-ef',label:'Emergency fund covered',type:'check',note:'Emergency fund is covered.',chk:true},
+    {id:'dc-homepaid',label:'Home is paid off',type:'check',note:'Client owns their home free and clear.',chk:false},
+    {id:'dc-rent',label:'Client rents',type:'check',note:'Client currently rents.',chk:false},
+    {id:'dc-outside',label:'Outside investments & assets',type:'multi',ph:'e.g. 401k at Fidelity, 200k at Merrill',note:'Outside assets: {val}.',chk:true},
+    {id:'dc-pension',label:'Pension income',type:'text',ph:'e.g. $3,500/month',note:'Client receives pension income of {val}.',chk:false},
+    {id:'dc-ss',label:'Social Security income',type:'text',ph:'e.g. $2,200/month',note:'Client receives Social Security income of {val}.',chk:false},
+    {id:'dc-timehorizon',label:'Time horizon discussed',type:'select',opts:['Less than 1 year','1-3 years','3-5 years','5-10 years','10+ years'],note:'Discussed time horizon, which at this point is {val}.',chk:true},
+    {sec:'Educational Discussion'},
+    {id:'dc-mkteduc',label:'Explained market volatility, principal risk & inflation',type:'check',note:'I took the time to explain and educate the client on how markets work, its volatility, loss of principal risk and how inflation affects their money.',chk:true},
+    {id:'dc-concepts',label:'Investment concepts explained',type:'multi',ph:'e.g. Managed strategies, annuities, bonds, structured notes, diversification',note:'Discussed the following investment concepts: {val}.',chk:true},
+    {id:'dc-options',label:'General investment options discussed (no recommendation made)',type:'multi',ph:'e.g. Discussed managed portfolios, fixed annuities, and bond strategies in general terms',note:'Several investment options were discussed in general terms: {val}. No specific recommendation was made at this time.',chk:true},
+    {id:'dc-gba',label:'GBA scheduled — follow-up to present proposal',type:'check',note:'Agreed to prepare a Goals Based Analysis (GBA); scheduled a follow-up appointment to present an investment proposal.',chk:true},
+    {id:'dc-legacy',label:'Legacy / estate planning discussed',type:'check',note:'Client sees their money primarily as a legacy for heirs; estate and legacy planning were discussed.',chk:false},
+    {id:'dc-inflation',label:'Discussed inflation impact on idle cash',type:'check',note:'Client recognizes how inflation is eating away at idle cash and is motivated to put the money to work.',chk:false},
+    {id:'dc-secondopinion',label:'Second opinion offered on outside assets',type:'check',note:"Offered a second opinion on client\'s existing outside investments.",chk:false},
+    {id:'dc-consolidation',label:'Discussed consolidation from outside firm',type:'check',note:'Discussed the possibility of consolidating assets from outside firm(s) to JPMorganChase.',chk:false},
+    {sec:'Next Steps'},
+    {id:'dc-followup',label:'Follow-up appointment scheduled',type:'text',ph:'e.g. In 2 weeks to discuss GBA findings and investment proposal',note:'Scheduled a follow-up appointment: {val}.',chk:true},
+    {id:'dc-addl',label:'Additional notes',type:'multi',ph:'Any other relevant details.',note:'Additional: {val}.',chk:false},
+  ],
+
+  followup:[
+    {sec:'Existing Relationship'},
+    {id:'fu-since',label:'Relationship established since',type:'text',ph:'e.g. March 2024 / approximately 6 months ago',note:'Client has had an established relationship with advisor since {val}.',chk:true},
+    {id:'fu-existing',label:'Existing products / strategies on file',type:'multi',ph:'e.g. 150k Large Cap Leaders, 150k CWMPD — both performing as expected',note:'Client currently holds the following strategies: {val}.',chk:true},
+    {id:'fu-nochanges',label:'No material changes to financial situation',type:'check',note:'Verified with the client that there have been no material changes to their financial situation, assets, liabilities, or life circumstances since our last meeting. Risk tolerance, investment objectives, and time horizon remain as previously documented.',chk:true},
+    {id:'fu-changes',label:'Material changes since last meeting — describe',type:'multi',ph:'e.g. Client received an inheritance of 200k, recently retired, income changed',note:'Client reported the following material changes since our last meeting: {val}.',chk:false},
+    {id:'fu-performance',label:'Reviewed existing account performance',type:'multi',ph:'e.g. Reviewed YTD performance on existing strategies; client satisfied with results',note:'Reviewed existing account performance: {val}.',chk:false},
+    {sec:'New Product / Strategy'},
+    {id:'fu-reason',label:'Reason for this follow-up / new product',type:'multi',ph:'e.g. Client had additional funds available and wanted to put them to work',note:'Purpose of this meeting: {val}.',chk:true},
+    {id:'fu-products',label:'New product(s) / strategy(ies) being added',type:'multi',ph:'e.g. Adding 100k Pacific Life Mariner 3-yr Fixed Annuity at 4.55%, funded from checking',note:'New investment solution(s) being added: {val}.',chk:true},
+    {id:'fu-jpmcap',label:'JPMCAP strategy added',type:'select',opts:['JPMCAP Conservative','JPMCAP Balanced','JPMCAP Growth','JPMCAP Aggressive'],note:'Added the {val} actively managed portfolio.',chk:false},
+    {id:'fu-mf-selected',label:'Mutual Funds selected — A vs C share disclosure',type:'multi',ph:'Fund name(s)',note:"Selected mutual fund(s): {val}. Discussed A vs C shares. Disclosed the 1% CDTC fee for A shares if sold within the first 12 months. Ran the FINRA Fund Analyzer tool and compared different funds to choose the one that better fits the client's interests.",chk:false},
+    {id:'fu-fees',label:'Advisory fee for new product',type:'text',ph:'e.g. 1.45% / annuity embedded / N/A',note:'Advisory fee for new product: {val}.',chk:true},
+    {id:'fu-ie',label:'Internal expenses disclosed',type:'text',ph:'e.g. 35bps / embedded in strategy',note:'Internal expenses: {val}, disclosed and discussed.',chk:true},
+    {sec:'Annuity-Specific (if applicable)'},
+    {id:'fu-annuity',label:'Annuity details',type:'multi',ph:'e.g. Pacific Life Mariner 3-yr GROP Fixed Annuity at 4.55%, $100k from checking, direct annuity funding, client is annuitant, spouse is beneficiary',note:'Annuity details: {val}.',chk:false},
+    {id:'fu-surrender',label:'Surrender schedule disclosed',type:'text',ph:'e.g. 3-year surrender period',note:'Surrender charge schedule disclosed: {val}. Client understands limited access to principal during surrender period.',chk:false},
+    {id:'fu-buyersguide',label:"Buyer's Guide & prospectus provided",type:'check',note:"The Buyer's Guide and prospectus were provided to the client for review.",chk:false},
+    {id:'fu-simon',label:'Simon illustration reviewed',type:'check',note:'Reviewed Simon illustration with client.',chk:false},
+    {id:'fu-regbi',label:'Reg BI / Form CRS disclosure provided',type:'check',note:"Reg BI best interest obligation documented. Form CRS provided. This recommendation is in the client\'s best interest — compensation and conflicts disclosed.",chk:false},
+    {sec:'Account Opening & Follow-Up'},
+    {id:'fu-docusign',label:'New account opened via DocuSign',type:'check',note:'Completed account opening for new strategy via DocuSign.',chk:true},
+    {id:'fu-docusign-pending',label:'DocuSign sent — awaiting signature',type:'check',note:'Sent account opening documents via DocuSign; awaiting client signature.',chk:false},
+    {id:'fu-funding',label:'Funded via money movement',type:'check',note:'Agreed with the client for the new account to be funded via money movement.',chk:true},
+    {id:'fu-rsnip',label:'Explained RSNIP',type:'check',note:'Explained RSNIP (Retirement Security Needs Income Planning).',chk:false},
+    {id:'fu-followup45',label:'45-day follow-up appointment booked',type:'check',note:'As part of the onboarding process booked a follow up appointment in 45 days to discuss 1st statement and answer any questions that the client might have.',chk:true},
+    {id:'fu-addl',label:'Additional notes',type:'multi',ph:'Any other relevant details.',note:'Additional: {val}.',chk:false},
+  ],
+
 };
 
 // ── STATE ─────────────────────────────────────────────────────
@@ -1002,6 +1064,5 @@ function reset(){
 });
 document.getElementById('sb-th').addEventListener('change',function(){this._m=true;});
 </script>
-
-
-</body></html>
+</body>
+</html>
